@@ -1,0 +1,66 @@
+% Fig. 4 -- qualitative examples, single-column version (IEEE column width 3.5 in)
+% Panels are the original 683x683 crops embedded in v6 fig4-compact.pdf (same images, same crop coordinates);
+% the DeepGlobe 1-bit predictions were recolored with the DeepGlobe palette (white -> agriculture, black -> urban).
+% R50 and native-scale ISDNet columns remain in Supplement S6.
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx}
+\usetikzlibrary{calc,positioning}
+\definecolor{ink}{HTML}{1E2A36}
+\definecolor{muted}{HTML}{5D6B7A}
+\definecolor{navy}{HTML}{1F4E79}
+\definecolor{frame}{HTML}{B8C3CE}
+\definecolor{dgurban}{RGB}{0,255,255}
+\definecolor{dgagri}{RGB}{255,255,0}
+\definecolor{dgrange}{RGB}{255,0,255}
+\definecolor{dgforest}{RGB}{0,255,0}
+\definecolor{dgwater}{RGB}{0,0,255}
+\definecolor{dgbarren}{RGB}{255,255,255}
+\definecolor{dgunknown}{RGB}{0,0,0}
+\newcommand{\fs}{\fontsize{8}{9.4}\selectfont}
+\newcommand{\fsb}{\fontsize{8}{9.4}\selectfont\bfseries}
+\begin{document}
+\frenchspacing\hyphenpenalty=10000\exhyphenpenalty=10000
+\begin{tikzpicture}[x=1in,y=1in,line join=round]
+\def\W{3.5}\def\s{0.85}\def\g{0.033}
+\useasboundingbox (0,0) rectangle (\W,2.62);
+% column x positions: i*(s+g) with s=0.85, g=0.033
+% ---------------- column headers ----------------
+\foreach \x/\t in {0.000/RGB, 0.883/Ground truth, 1.766/SegFormer-B5, 2.649/ISDNet}{
+  \node[font=\fsb, text=ink, inner sep=0pt, anchor=base] at (\x+0.425,2.535) {\t};
+}
+\node[font=\fs, text=muted, inner sep=0pt, anchor=base] at (1.766+0.425,2.405) {val-selected};
+\node[font=\fs, text=muted, inner sep=0pt, anchor=base] at (2.649+0.425,2.405) {official, $\times$0.8};
+% ---------------- rows ----------------
+\foreach \ytop/\name/\delta/\pre in {2.345/DeepGlobe\,$\cdot$\,127660/+2.61/dg, 1.335/Inria\,$\cdot$\,austin7/+7.11/in}{
+  \node[font=\fsb, text=ink, inner sep=0pt, anchor=base west] at (0,\ytop-0.105) {\name};
+  \node[font=\fs, text=navy, inner sep=0pt, anchor=base east] at (\W,\ytop-0.105) {$\Delta$ = \delta\ pp};
+  \foreach \x/\f in {0.000/rgb, 0.883/gt, 1.766/b5, 2.649/isdoff}{
+    \node[anchor=north west, inner sep=0pt] at (\x,\ytop-0.14) {\includegraphics[width=0.85in,height=0.85in]{qual_src/\pre_\f.png}};
+    \draw[frame, line width=0.4pt] (\x,\ytop-0.14) rectangle ++(0.85,-0.85);
+  }
+}
+% ---------------- legend (two lines, items chained left to right) ----------------
+\tikzset{sw/.style={draw=frame, line width=0.35pt, minimum width=0.10in, minimum height=0.07in, inner sep=0pt},
+         lab/.style={font=\fs, text=ink, inner sep=0pt, anchor=west}}
+\newcommand{\legitem}[4]{% previous node, new name, color, label
+  \node[sw, fill=#3, anchor=west] (#2s) at ($(#1.east)+(0.075,0)$) {};
+  \node[lab] (#2) at ($(#2s.east)+(0.04,0)$) {#4};
+}
+\node[font=\fsb, text=ink, inner sep=0pt, anchor=west] (dg) at (0,0.215) {DG};
+\legitem{dg}{a}{dgurban}{urban}
+\legitem{a}{b}{dgagri}{agriculture}
+\legitem{b}{c}{dgrange}{rangeland}
+\legitem{c}{d}{dgforest}{forest}
+\legitem{d}{e}{dgwater}{water}
+\node[inner sep=0pt, anchor=west] (pad) at (0.205,0.075) {};
+\legitem{pad}{f}{dgbarren}{barren}
+\legitem{f}{g}{dgunknown}{unknown}
+\node[font=\fsb, text=ink, inner sep=0pt, anchor=west] (inr) at ($(g.east)+(0.20,0)$) {Inria};
+\legitem{inr}{h}{dgbarren}{building}
+\legitem{h}{k}{dgunknown}{background}
+\end{tikzpicture}
+\end{document}

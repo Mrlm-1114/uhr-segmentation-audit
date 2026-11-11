@@ -1,0 +1,184 @@
+{
+  "source_files": [
+    {
+      "path": "backbone/lib/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backbone/lib/config/__init__.py",
+      "sha256": "8b774d5e8f30279da3326b58cb1011d54ab98a08341913a7401f37a68c6cc12d"
+    },
+    {
+      "path": "backbone/lib/config/default.py",
+      "sha256": "176532c778bef2a39c7e677bdfb607b652137a6ed79a22fde8d8fe55d9939db0"
+    },
+    {
+      "path": "backbone/lib/core/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backbone/lib/core/criterion.py",
+      "sha256": "b7c3b4712320161c069829c5c6a347ac5e8635e2f70bd43db98f3bb7ad96577e"
+    },
+    {
+      "path": "backbone/lib/core/function.py",
+      "sha256": "5310cf5d746c38addd51633d789bf6d6a90c87cc71bf8c717aca6e1de10c3597"
+    },
+    {
+      "path": "backbone/lib/datasets/__init__.py",
+      "sha256": "4db24f1812744d218fa4f629a1d3b6a2499c1643e17ca71babc704226a06e767"
+    },
+    {
+      "path": "backbone/lib/datasets/base_dataset.py",
+      "sha256": "a9db8b5e31415a736e2daffebd7498976f3f37cd93e2c573ea9fb416b004fe26"
+    },
+    {
+      "path": "backbone/lib/datasets/cityscapes.py",
+      "sha256": "32d6f9b93353153a0c9583c4dd201df63a25e665d7081ee0b843bc9c19c918cd"
+    },
+    {
+      "path": "backbone/lib/datasets/deepglobe.py",
+      "sha256": "0554663853d8468ad288a67e2b0da7fdd9ca88ce18fbd99ef1554a0f596a217e"
+    },
+    {
+      "path": "backbone/lib/models/__init__.py",
+      "sha256": "17473b3ac383e02a93eb406b5d6fc5a3b754ec3412a5ea22ba9237112a8b74cc"
+    },
+    {
+      "path": "backbone/lib/utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backbone/lib/utils/distributed.py",
+      "sha256": "76b8dbf3beba1fa15b6ab0c8372d5613d5899a91e41ae42aefde250514e4b248"
+    },
+    {
+      "path": "backbone/lib/utils/modelsummary.py",
+      "sha256": "e463314d2c6c6ed63cc16ac8b23734072804e278e17d02130e73267fa6603ae3"
+    },
+    {
+      "path": "backbone/lib/utils/utils.py",
+      "sha256": "01e3595691a1654bc548ca128bfa7345c9c788505f2ec369782069d4f507676c"
+    },
+    {
+      "path": "backbone/train.py",
+      "sha256": "445d0a1c985613dea910d780e539633ddf1bc94f0aef4596f5282fc530f65f8b"
+    },
+    {
+      "path": "demo.py",
+      "sha256": "a53fc1ed7de22d9ea411a1a4a36f9ab27451fdb10be013b5641f594268606473"
+    },
+    {
+      "path": "magnet/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "magnet/dataset/__init__.py",
+      "sha256": "8a535565f79a9d840bb92b091d505f66a350e17b388a3a9f324c2608e6fad192"
+    },
+    {
+      "path": "magnet/dataset/base.py",
+      "sha256": "b51d619c0023a423a4b195b7c47727ec2667c6b7e73cf98913704aa82a14a549"
+    },
+    {
+      "path": "magnet/dataset/cityscapes.py",
+      "sha256": "6da07d3bb7254fadaf14dbf3dfadec66c02f5aa597bf69f21654d702f6fb0b34"
+    },
+    {
+      "path": "magnet/dataset/deepglobe.py",
+      "sha256": "c02d9856f71e656df4970ec4395e9f9ef274fd74981ded1b65a8eccc98d86cdc"
+    },
+    {
+      "path": "magnet/model/__init__.py",
+      "sha256": "f205ac0ac88d2eca671506c3caaf5a19f845f058c4ce97da9262d4302c513105"
+    },
+    {
+      "path": "magnet/model/base.py",
+      "sha256": "8efbcfdee91be5544c34ee1caa71fc6db506fa40613aad78569797bea8c110a3"
+    },
+    {
+      "path": "magnet/model/fpn.py",
+      "sha256": "13724d35c56e13151052c1347225d2d75e472999c9f50a230fa4e8d78ac7e65e"
+    },
+    {
+      "path": "magnet/model/hrnet_ocr/__init__.py",
+      "sha256": "f0b1f0f631e68ca517e8c32f9a0446a055c9eaed3825f546757c4d1f50d20b5f"
+    },
+    {
+      "path": "magnet/model/hrnet_ocr/config.py",
+      "sha256": "03919c1d03371829815cb4d347863fcd0466b1eaf01b842e10ea09308a4ff327"
+    },
+    {
+      "path": "magnet/model/hrnet_ocr/module.py",
+      "sha256": "7b1efa659c30f3e951ffb708c766a1012f69c098bcb542c69eb96adb2fa161ca"
+    },
+    {
+      "path": "magnet/model/pspnet.py",
+      "sha256": "ee4962f2c514ce33ab65273b4dcf8f508141e6dc0180290453bf8cd906c98f12"
+    },
+    {
+      "path": "magnet/model/refinement.py",
+      "sha256": "6dca03a36a80d4086f953df302e3c283f5752a2e40dcad564b3069d5df69d37e"
+    },
+    {
+      "path": "magnet/model/resnet.py",
+      "sha256": "bd11d419b8139a026c8fc17cc44fc13d12e7adbb63d338c223c35470d997e709"
+    },
+    {
+      "path": "magnet/options/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "magnet/options/base.py",
+      "sha256": "d2b681d4c55c45a8c02b5252e2c5b940365a4ad6223610dc567db178c5580777"
+    },
+    {
+      "path": "magnet/options/test.py",
+      "sha256": "9b2a4449d30e429374d12a47500f48de53bdd836deb640f88250386fb2fca325"
+    },
+    {
+      "path": "magnet/options/train.py",
+      "sha256": "fa20a7b75eb2e30542f7034f02e13ae42732f854610651fc0ec6a90b5e29733e"
+    },
+    {
+      "path": "magnet/utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "magnet/utils/blur.py",
+      "sha256": "9778f1909d416c66a065b5aeb7e56601c05a8528ca9a58e5ca9327aad9cdc77d"
+    },
+    {
+      "path": "magnet/utils/geometry.py",
+      "sha256": "ddb6429b19830d17dc4ec745d8dc10a96e38e1fe69ce9237de409aff58f30133"
+    },
+    {
+      "path": "magnet/utils/loss.py",
+      "sha256": "00d61177c113a4b4f13abf2bc2e3162851bf8b70292c72b6f939ca90d93ac627"
+    },
+    {
+      "path": "magnet/utils/metrics.py",
+      "sha256": "1ca45346bba84b89f59aad844102f83e6714a09e84dc06970d735500afab42ba"
+    },
+    {
+      "path": "magnet/utils/transform.py",
+      "sha256": "1f52e368fcdcd00691fd85e68a05e03ee4aff3de052a3bb6e37d4f1722f9d145"
+    },
+    {
+      "path": "test.py",
+      "sha256": "64195724c6ceee61fe6d8339a16a28b59b0c308aec9cbfb20e926aa0964be086"
+    },
+    {
+      "path": "train.py",
+      "sha256": "533129883d18c75459136f70d66b16bbb02f0309bbf1b42d91a01531c2d339f4"
+    }
+  ],
+  "files": [
+    {
+      "name": "deepglobe_fpn.pth"
+    },
+    {
+      "name": "deepglobe_refinement.pth"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "When Does Specialization Pay Off in Ultra-High-Resolution Semantic Segmentation? Auditing Baselines, Metrics, and End-to-End Efficiency",
+  "author": "Keyao Ma",
+  "version": "Numeric reference dated 2026-11-11",
+  "main_sha256": "b297ef595e310a2293e5d57c98d1d945ae008f2abf84749b69215a8fbf304a23",
+  "tables_sha256": {
+    "baselines": "4b12113f91224fd36efe80ad2d3b85311a54838dcefa292540f0f36beff07bd9",
+    "efficiency": "4fa369e10b6ce02c1cce269845265186917d5978180d04b41fe47f27f8460641",
+    "recovery": "48ade4a43187b6a001dd77b6037d47b66ea1aed12f7a2f2e409885f371b01198",
+    "reproduction": "c3eeb1d4e7cc42163b6726d7e4a3cdeaa8ace81b49cab03acb80b570532cd3aa",
+    "seeds": "5b42a8309fcb9e5810e6699bdc7404cb10e53ec1df57acfacb06384605937827",
+    "urur": "3386ad6618a26e5093796f632061f2c291ef42c7a1ebd23237ee6a098273745d"
+  }
+}

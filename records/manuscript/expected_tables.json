@@ -1,0 +1,737 @@
+[
+  {
+    "table": "II",
+    "macro": "isdnetDgOfficialReproPp",
+    "display": "73.29"
+  },
+  {
+    "table": "II",
+    "macro": "isdnetDgOfficialPaperPp",
+    "display": "73.30"
+  },
+  {
+    "table": "II",
+    "macro": "isdnetInriaOfficialReproPp",
+    "display": "74.39"
+  },
+  {
+    "table": "II",
+    "macro": "isdnetInriaOfficialReadmePp",
+    "display": "74.39"
+  },
+  {
+    "table": "II",
+    "macro": "eEightMagNetObservedPp",
+    "display": "72.10"
+  },
+  {
+    "table": "II",
+    "macro": "eEightMagNetReferencePp",
+    "display": "72.10"
+  },
+  {
+    "table": "II",
+    "macro": "eEightMagNetPaperPp",
+    "display": "72.96"
+  },
+  {
+    "table": "II",
+    "macro": "eEightMagNetFastObservedPp",
+    "display": "68.22"
+  },
+  {
+    "table": "II",
+    "macro": "eEightMagNetFastReferencePp",
+    "display": "68.22"
+  },
+  {
+    "table": "II",
+    "macro": "eEightMagNetFastPaperPp",
+    "display": "71.85"
+  },
+  {
+    "table": "II",
+    "macro": "eEightFCtLObservedPp",
+    "display": "73.53"
+  },
+  {
+    "table": "II",
+    "macro": "eEightFCtLReferencePp",
+    "display": "73.70"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenDgLiteratureDeepLabPp",
+    "display": "63.50"
+  },
+  {
+    "table": "III",
+    "macro": "pFixedInput",
+    "display": "508"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenDgRFiveZeroAtFiveZeroEightPp",
+    "display": "71.58"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenDgMagNetFpnAtFiveZeroEightPp",
+    "display": "67.22"
+  },
+  {
+    "table": "III",
+    "macro": "pHalf",
+    "display": "1/2"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenDgRFiveZeroSZeroFivePp",
+    "display": "73.67"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenInriaGLNetPp",
+    "display": "55.90"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenInriaRFiveZeroAtFiveZeroEightBuildingPp",
+    "display": "48.79"
+  },
+  {
+    "table": "III",
+    "macro": "eSevenInriaRFiveZeroAtFiveZeroEightMeanPp",
+    "display": "68.08"
+  },
+  {
+    "table": "III",
+    "macro": "pInriaRBuildingPooled",
+    "display": "78.74"
+  },
+  {
+    "table": "III",
+    "macro": "pInriaRMeanPooled",
+    "display": "86.83"
+  },
+  {
+    "table": "III",
+    "macro": "pInriaRBuildingImage",
+    "display": "75.76"
+  },
+  {
+    "table": "III",
+    "macro": "pInriaRMeanImage",
+    "display": "85.06"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetDgFpThreeTwoOfficialAccuracyPp",
+    "display": "73.29"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetDgFpThreeTwoOfficialLatencyRFourTime",
+    "display": "95.9"
+  },
+  {
+    "table": "V",
+    "macro": "pDgOfficialMemory",
+    "display": "0.72"
+  },
+  {
+    "table": "V",
+    "macro": "eSixDgFpThreeTwoCpuPreprocessPct",
+    "display": "77.6"
+  },
+  {
+    "table": "V",
+    "macro": "officialBudgetDgFpThreeTwoDeltaPp",
+    "display": "+0.80"
+  },
+  {
+    "table": "V",
+    "macro": "pFairScale",
+    "display": "0.8"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetDgFpThreeTwoFairAccuracyRFourPp",
+    "display": "73.29"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetDgFpThreeTwoFairLatencyRFourTime",
+    "display": "20.6"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetDgFpThreeTwoFairMemoryRFourGib",
+    "display": "0.72"
+  },
+  {
+    "table": "V",
+    "macro": "budgetDgDeltaRFourPp",
+    "display": "-3.25"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetObservedPp",
+    "display": "72.10"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetLatencyTime",
+    "display": "311.3"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetMemoryGib",
+    "display": "1.20"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetCpuSharePct",
+    "display": "19.2"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetValDeltaPp",
+    "display": "+2.33"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetFastObservedPp",
+    "display": "68.22"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetFastLatencyTime",
+    "display": "185.9"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetFastMemoryGib",
+    "display": "1.34"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetFastCpuSharePct",
+    "display": "34.1"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetFastValDeltaPp",
+    "display": "+6.21"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetBackboneObservedPp",
+    "display": "67.22"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetBackboneLatencyTime",
+    "display": "66.9"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetBackboneMemoryGib",
+    "display": "0.38"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetBackboneCpuSharePct",
+    "display": "90.0"
+  },
+  {
+    "table": "V",
+    "macro": "eEightMagNetBackboneValDeltaPp",
+    "display": "+6.87"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetInriaFpThreeTwoOfficialAccuracyPp",
+    "display": "74.39"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetInriaFpThreeTwoOfficialLatencyRFourTime",
+    "display": "425.6"
+  },
+  {
+    "table": "V",
+    "macro": "pInriaOfficialMemory",
+    "display": "2.77"
+  },
+  {
+    "table": "V",
+    "macro": "eSixInriaFpThreeTwoCpuPreprocessPct",
+    "display": "81.9"
+  },
+  {
+    "table": "V",
+    "macro": "officialBudgetInriaFpThreeTwoDeltaPp",
+    "display": "+0.71"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetInriaFpThreeTwoFairAccuracyRFourPp",
+    "display": "74.41"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetInriaFpThreeTwoFairLatencyRFourTime",
+    "display": "110.6"
+  },
+  {
+    "table": "V",
+    "macro": "isdnetInriaFpThreeTwoFairMemoryRFourGib",
+    "display": "2.77"
+  },
+  {
+    "table": "V",
+    "macro": "budgetInriaDeltaRFourPp",
+    "display": "-21.58"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLObservedPp",
+    "display": "73.53"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLLatencyTime",
+    "display": "72.8"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLMemoryGib",
+    "display": "20.04"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLValDeltaPp",
+    "display": "+7.42"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLNoTtaObservedPp",
+    "display": "72.87"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLNoTtaLatencyTime",
+    "display": "9.48"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLNoTtaMemoryGib",
+    "display": "20.04"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLNoTtaCpuSharePct",
+    "display": "60.7"
+  },
+  {
+    "table": "V",
+    "macro": "eEightFCtLNoTtaValDeltaPp",
+    "display": "+8.08"
+  },
+  {
+    "table": "IV",
+    "macro": "pSeedZero",
+    "display": "0"
+  },
+  {
+    "table": "IV",
+    "macro": "pHalf",
+    "display": "1/2"
+  },
+  {
+    "table": "IV",
+    "macro": "pDgFtwo",
+    "display": "80.22"
+  },
+  {
+    "table": "IV",
+    "macro": "pDgIPub",
+    "display": "73.30"
+  },
+  {
+    "table": "IV",
+    "macro": "isdnetDgOfficialReproPp",
+    "display": "73.29"
+  },
+  {
+    "table": "IV",
+    "macro": "seedDgMdOnePp",
+    "display": "74.42"
+  },
+  {
+    "table": "IV",
+    "macro": "seedDgCOnePct",
+    "display": "16.3"
+  },
+  {
+    "table": "IV",
+    "macro": "pDgBHalfMs",
+    "display": "119.6"
+  },
+  {
+    "table": "IV",
+    "macro": "pInriaFtwo",
+    "display": "83.39"
+  },
+  {
+    "table": "IV",
+    "macro": "pInriaIPub",
+    "display": "74.23"
+  },
+  {
+    "table": "IV",
+    "macro": "isdnetInriaOfficialReproPp",
+    "display": "74.39"
+  },
+  {
+    "table": "IV",
+    "macro": "seedInriaMdOnePp",
+    "display": "80.95"
+  },
+  {
+    "table": "IV",
+    "macro": "pInriaRecovery",
+    "display": "71.6"
+  },
+  {
+    "table": "IV",
+    "macro": "pInriaBSlideMs",
+    "display": "3495.7"
+  },
+  {
+    "table": "IV",
+    "macro": "isdnetDgFpThreeTwoOfficialLatencyRFourTime",
+    "display": "95.9"
+  },
+  {
+    "table": "IV",
+    "macro": "pThird",
+    "display": "1/3"
+  },
+  {
+    "table": "IV",
+    "macro": "officialBudgetDgFpThreeTwoSelectedAccuracyPp",
+    "display": "74.09"
+  },
+  {
+    "table": "IV",
+    "macro": "officialBudgetDgFpThreeTwoDeltaPp",
+    "display": "+0.80"
+  },
+  {
+    "table": "IV",
+    "macro": "pDgBudgetRecovery",
+    "display": "11.5"
+  },
+  {
+    "table": "IV",
+    "macro": "isdnetInriaFpThreeTwoOfficialLatencyRFourTime",
+    "display": "425.6"
+  },
+  {
+    "table": "IV",
+    "macro": "officialBudgetInriaFpThreeTwoSelectedAccuracyPp",
+    "display": "75.10"
+  },
+  {
+    "table": "IV",
+    "macro": "officialBudgetInriaFpThreeTwoDeltaPp",
+    "display": "+0.71"
+  },
+  {
+    "table": "IV",
+    "macro": "pInriaBudgetRecovery",
+    "display": "7.7"
+  },
+  {
+    "table": "IV",
+    "macro": "pFairScale",
+    "display": "0.8"
+  },
+  {
+    "table": "IV",
+    "macro": "isdnetDgFpThreeTwoFairLatencyRFourTime",
+    "display": "20.6"
+  },
+  {
+    "table": "IV",
+    "macro": "pSixth",
+    "display": "1/6"
+  },
+  {
+    "table": "IV",
+    "macro": "budgetDgSelectedAccuracyRFourPp",
+    "display": "70.03"
+  },
+  {
+    "table": "IV",
+    "macro": "budgetDgDeltaRFourPp",
+    "display": "-3.25"
+  },
+  {
+    "table": "IV",
+    "macro": "isdnetInriaFpThreeTwoFairLatencyRFourTime",
+    "display": "110.6"
+  },
+  {
+    "table": "IV",
+    "macro": "budgetInriaSelectedAccuracyRFourPp",
+    "display": "52.82"
+  },
+  {
+    "table": "IV",
+    "macro": "budgetInriaDeltaRFourPp",
+    "display": "-21.58"
+  },
+  {
+    "table": "VI",
+    "macro": "pSeedZero",
+    "display": "0"
+  },
+  {
+    "table": "VI",
+    "macro": "pHalf",
+    "display": "1/2"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgMdOnePp",
+    "display": "74.42"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgCOnePct",
+    "display": "16.3"
+  },
+  {
+    "table": "VI",
+    "macro": "pDgBHalfMs",
+    "display": "119.6"
+  },
+  {
+    "table": "VI",
+    "macro": "pSeedOne",
+    "display": "1"
+  },
+  {
+    "table": "VI",
+    "macro": "pThird",
+    "display": "1/3"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgMdTwoPp",
+    "display": "73.28"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgCTwoPct",
+    "display": "-0.2"
+  },
+  {
+    "table": "VI",
+    "macro": "pDgBThirdMs",
+    "display": "44.5"
+  },
+  {
+    "table": "VI",
+    "macro": "pSeedTwo",
+    "display": "2"
+  },
+  {
+    "table": "VI",
+    "macro": "pThreeQuarters",
+    "display": "3/4"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgMdThreePp",
+    "display": "73.13"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgCThreePct",
+    "display": "-2.4"
+  },
+  {
+    "table": "VI",
+    "macro": "pDgBThreeQuartersMs",
+    "display": "454.0"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgMeanPp",
+    "display": "73.61"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgSdPp",
+    "display": "0.71"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgCMeanPct",
+    "display": "4.6"
+  },
+  {
+    "table": "VI",
+    "macro": "seedDgCSdPct",
+    "display": "10.2"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaMdOnePp",
+    "display": "80.95"
+  },
+  {
+    "table": "VI",
+    "macro": "pInriaRecovery",
+    "display": "71.6"
+  },
+  {
+    "table": "VI",
+    "macro": "pInriaBSlideMs",
+    "display": "3495.7"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaMdTwoPp",
+    "display": "81.11"
+  },
+  {
+    "table": "VI",
+    "macro": "pInriaSeedOneC",
+    "display": "73.3"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaMdThreePp",
+    "display": "81.15"
+  },
+  {
+    "table": "VI",
+    "macro": "pInriaSeedTwoC",
+    "display": "73.8"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaMeanPp",
+    "display": "81.07"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaSdPp",
+    "display": "0.11"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaCMeanPct",
+    "display": "72.9"
+  },
+  {
+    "table": "VI",
+    "macro": "seedInriaCSdPct",
+    "display": "1.2"
+  },
+  {
+    "table": "VII",
+    "macro": "ururLitDeepLabROneEight",
+    "display": "33.1"
+  },
+  {
+    "table": "VII",
+    "macro": "ururISDReportedTest",
+    "display": "45.8"
+  },
+  {
+    "table": "VII",
+    "macro": "ururLitRelay",
+    "display": "46.4"
+  },
+  {
+    "table": "VII",
+    "macro": "ururLitWSDNet",
+    "display": "46.9"
+  },
+  {
+    "table": "VII",
+    "macro": "ururLitSRMF",
+    "display": "47.02"
+  },
+  {
+    "table": "VII",
+    "macro": "ururLitRUE",
+    "display": "48.2"
+  },
+  {
+    "table": "VII",
+    "macro": "ururLitCASWiT",
+    "display": "49.2"
+  },
+  {
+    "table": "VII",
+    "macro": "ururROneEightBestTest",
+    "display": "45.66"
+  },
+  {
+    "table": "VII",
+    "macro": "ururRFiveZeroBestTest",
+    "display": "45.75"
+  },
+  {
+    "table": "VII",
+    "macro": "ururRFiveZeroLatencyOneDp",
+    "display": "117.1"
+  },
+  {
+    "table": "VII",
+    "macro": "ururRFiveZeroPeakAllocatedGiB",
+    "display": "2.17"
+  },
+  {
+    "table": "VII",
+    "macro": "ururMTest",
+    "display": "48.51"
+  },
+  {
+    "table": "VII",
+    "macro": "ururMLatencyOneDp",
+    "display": "168.6"
+  },
+  {
+    "table": "VII",
+    "macro": "ururBFivePeakAllocatedGiB",
+    "display": "1.97"
+  },
+  {
+    "table": "VII",
+    "macro": "ururISDOfficialLatencyOneDp",
+    "display": "803.5"
+  },
+  {
+    "table": "VII",
+    "macro": "ururISDOfficialPeakAllocatedGiB",
+    "display": "4.49"
+  },
+  {
+    "table": "VII",
+    "macro": "ururISDGpuLatencyOneDp",
+    "display": "190.9"
+  },
+  {
+    "table": "VII",
+    "macro": "ururISDGpuPeakAllocatedGiB",
+    "display": "4.49"
+  }
+]

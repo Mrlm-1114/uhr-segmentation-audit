@@ -1,0 +1,78 @@
+{
+  "B5": {
+    "python": "3.10.22",
+    "kernel": "5.15.0-94-generic",
+    "glibc": [
+      "glibc",
+      "2.31"
+    ],
+    "torch": "2.0.0+cu118",
+    "cuda": "11.8",
+    "mmcv": "1.7.2",
+    "mmseg": "0.30.0",
+    "numpy": "1.26.4",
+    "torch_threads": 4,
+    "interop_threads": 1,
+    "opencv_threads": 1,
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_benchmark": true
+  },
+  "R50": {
+    "python": "3.10.22",
+    "kernel": "5.15.0-94-generic",
+    "glibc": [
+      "glibc",
+      "2.31"
+    ],
+    "torch": "2.0.0+cu118",
+    "cuda": "11.8",
+    "mmcv": "1.7.2",
+    "mmseg": "0.30.0",
+    "numpy": "1.26.4",
+    "torch_threads": 4,
+    "interop_threads": 1,
+    "opencv_threads": 1,
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_benchmark": true
+  },
+  "ISDNet": {
+    "python": "3.10.22",
+    "kernel": "5.15.0-94-generic",
+    "glibc": [
+      "glibc",
+      "2.31"
+    ],
+    "torch": "2.0.0+cu118",
+    "cuda": "11.8",
+    "mmcv": "1.7.2",
+    "mmseg": "0.30.0",
+    "numpy": "1.26.4",
+    "torch_threads": 4,
+    "interop_threads": 1,
+    "opencv_threads": 1,
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_benchmark": true
+  },
+  "weight_check": {
+    "python": "3.10.22",
+    "kernel": "5.15.0-94-generic",
+    "glibc": [
+      "glibc",
+      "2.31"
+    ],
+    "torch": "2.0.0+cu118",
+    "cuda": "11.8",
+    "mmcv": "1.7.2",
+    "mmseg": "0.30.0",
+    "numpy": "1.26.4",
+    "torch_threads": 4,
+    "interop_threads": 1,
+    "opencv_threads": 1,
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_benchmark": true
+  }
+}

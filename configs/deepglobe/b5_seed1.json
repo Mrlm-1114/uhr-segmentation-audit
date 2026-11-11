@@ -1,0 +1,222 @@
+{
+  "model": {
+    "type": "EncoderDecoder",
+    "pretrained": null,
+    "backbone": {
+      "type": "MixVisionTransformer",
+      "in_channels": 3,
+      "embed_dims": 64,
+      "num_stages": 4,
+      "num_layers": [
+        3,
+        6,
+        40,
+        3
+      ],
+      "num_heads": [
+        1,
+        2,
+        5,
+        8
+      ],
+      "patch_sizes": [
+        7,
+        3,
+        3,
+        3
+      ],
+      "sr_ratios": [
+        8,
+        4,
+        2,
+        1
+      ],
+      "out_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mlp_ratio": 4,
+      "qkv_bias": true,
+      "drop_rate": 0.0,
+      "attn_drop_rate": 0.0,
+      "drop_path_rate": 0.1,
+      "init_cfg": {
+        "type": "Pretrained",
+        "checkpoint": "weights/mit_b5_20220624-658746d9.pth"
+      },
+      "with_cp": true
+    },
+    "decode_head": {
+      "type": "SegformerHead",
+      "in_channels": [
+        64,
+        128,
+        320,
+        512
+      ],
+      "in_index": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "channels": 256,
+      "dropout_ratio": 0.1,
+      "num_classes": 7,
+      "norm_cfg": {
+        "type": "SyncBN",
+        "requires_grad": true
+      },
+      "align_corners": false,
+      "ignore_index": 255,
+      "loss_decode": {
+        "type": "CrossEntropyLoss",
+        "use_sigmoid": false,
+        "loss_weight": 1.0
+      }
+    },
+    "train_cfg": {},
+    "test_cfg": {
+      "mode": "whole"
+    }
+  },
+  "data": {
+    "samples_per_gpu": 8,
+    "workers_per_gpu": 2,
+    "train": {
+      "type": "CustomDataset",
+      "data_root": "data/deepglobe",
+      "img_dir": "images",
+      "ann_dir": "labels",
+      "img_suffix": ".jpg",
+      "seg_map_suffix": ".png",
+      "split": "splits/deepglobe/train.txt",
+      "classes": [
+        "unknown",
+        "urban",
+        "agriculture",
+        "rangeland",
+        "forest",
+        "water",
+        "barren"
+      ],
+      "reduce_zero_label": false,
+      "ignore_index": 255,
+      "pipeline": [
+        {
+          "type": "LoadImageFromFile"
+        },
+        {
+          "type": "LoadAnnotations"
+        },
+        {
+          "type": "Resize",
+          "img_scale": [
+            2448,
+            2448
+          ],
+          "ratio_range": [
+            0.125,
+            1.0
+          ],
+          "keep_ratio": true
+        },
+        {
+          "type": "RandomCrop",
+          "crop_size": [
+            1024,
+            1024
+          ],
+          "cat_max_ratio": 0.75
+        },
+        {
+          "type": "RandomFlip",
+          "prob": 0.5
+        },
+        {
+          "type": "PhotoMetricDistortion"
+        },
+        {
+          "type": "Normalize",
+          "mean": [
+            123.675,
+            116.28,
+            103.53
+          ],
+          "std": [
+            58.395,
+            57.12,
+            57.375
+          ],
+          "to_rgb": true
+        },
+        {
+          "type": "Pad",
+          "size": [
+            1024,
+            1024
+          ],
+          "pad_val": 0,
+          "seg_pad_val": 255
+        },
+        {
+          "type": "DefaultFormatBundle"
+        },
+        {
+          "type": "Collect",
+          "keys": [
+            "img",
+            "gt_semantic_seg"
+          ]
+        }
+      ]
+    }
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 6e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.01,
+    "paramwise_cfg": {
+      "custom_keys": {
+        "pos_block": {
+          "decay_mult": 0.0
+        },
+        "norm": {
+          "decay_mult": 0.0
+        },
+        "head": {
+          "lr_mult": 10.0
+        }
+      }
+    }
+  },
+  "lr_config": {
+    "policy": "poly",
+    "warmup": "linear",
+    "warmup_iters": 1500,
+    "warmup_ratio": 1e-06,
+    "power": 1.0,
+    "min_lr": 0.0,
+    "by_epoch": false
+  },
+  "runner": {
+    "type": "IterBasedRunner",
+    "max_iters": 22025
+  },
+  "cudnn_benchmark": false,
+  "seed": 1,
+  "checkpoint_config": {
+    "by_epoch": false,
+    "interval": 8000,
+    "save_last": true
+  },
+  "dataset": "deepglobe",
+  "family": "B5",
+  "precision": "fp32"
+}

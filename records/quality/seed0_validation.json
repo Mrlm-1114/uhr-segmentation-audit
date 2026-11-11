@@ -1,0 +1,256 @@
+{
+  "tie_tolerance_pp": "1e-9",
+  "datasets": {
+    "deepglobe": {
+      "ranked_candidates": [
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "S_0.5",
+          "val_primary_pct": 73.26797232653836,
+          "rank": 1,
+          "tie_group": 1,
+          "tie_group_highest_val_primary_pct": 73.26797232653836
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "S_0.333333",
+          "val_primary_pct": 73.24449460113827,
+          "rank": 2,
+          "tie_group": 2,
+          "tie_group_highest_val_primary_pct": 73.24449460113827
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "S_0.75",
+          "val_primary_pct": 73.16893734068981,
+          "rank": 3,
+          "tie_group": 3,
+          "tie_group_highest_val_primary_pct": 73.16893734068981
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "native_slide_1024_stride_768",
+          "val_primary_pct": 72.61842832807189,
+          "rank": 4,
+          "tie_group": 4,
+          "tie_group_highest_val_primary_pct": 72.61842832807189
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_0.5",
+          "val_primary_pct": 71.7967426127018,
+          "rank": 5,
+          "tie_group": 5,
+          "tie_group_highest_val_primary_pct": 71.7967426127018
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_0.75",
+          "val_primary_pct": 71.58646772233855,
+          "rank": 6,
+          "tie_group": 6,
+          "tie_group_highest_val_primary_pct": 71.58646772233855
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_0.25",
+          "val_primary_pct": 71.4940071298152,
+          "rank": 7,
+          "tie_group": 7,
+          "tie_group_highest_val_primary_pct": 71.4940071298152
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_0.333333",
+          "val_primary_pct": 71.48464372844768,
+          "rank": 8,
+          "tie_group": 8,
+          "tie_group_highest_val_primary_pct": 71.48464372844768
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_1",
+          "val_primary_pct": 70.9214913796417,
+          "rank": 9,
+          "tie_group": 9,
+          "tie_group_highest_val_primary_pct": 70.9214913796417
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "S_0.25",
+          "val_primary_pct": 70.91744172390388,
+          "rank": 10,
+          "tie_group": 10,
+          "tie_group_highest_val_primary_pct": 70.91744172390388
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "native_slide_1024_stride_768",
+          "val_primary_pct": 70.47830476433798,
+          "rank": 11,
+          "tie_group": 11,
+          "tie_group_highest_val_primary_pct": 70.47830476433798
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_0.166667",
+          "val_primary_pct": 69.83194592287269,
+          "rank": 12,
+          "tie_group": 12,
+          "tie_group_highest_val_primary_pct": 69.83194592287269
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "S_0.166667",
+          "val_primary_pct": 69.56084353274206,
+          "rank": 13,
+          "tie_group": 13,
+          "tie_group_highest_val_primary_pct": 69.56084353274206
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "dlv3",
+          "path": "S_0.125",
+          "val_primary_pct": 66.81378230474864,
+          "rank": 14,
+          "tie_group": 14,
+          "tie_group_highest_val_primary_pct": 66.81378230474864
+        },
+        {
+          "dataset": "deepglobe",
+          "family": "segformer_b5",
+          "path": "S_0.125",
+          "val_primary_pct": 63.59744129731183,
+          "rank": 15,
+          "tie_group": 15,
+          "tie_group_highest_val_primary_pct": 63.59744129731183
+        }
+      ]
+    },
+    "inria": {
+      "ranked_candidates": [
+        {
+          "dataset": "inria",
+          "family": "segformer_b5",
+          "path": "native_slide_1024_stride_768",
+          "val_primary_pct": 80.82061343634571,
+          "rank": 1,
+          "tie_group": 1,
+          "tie_group_highest_val_primary_pct": 80.82061343634571
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "native_slide_1024_stride_768",
+          "val_primary_pct": 78.67673794218992,
+          "rank": 2,
+          "tie_group": 2,
+          "tie_group_highest_val_primary_pct": 78.67673794218992
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "S_0.75",
+          "val_primary_pct": 77.14997672992907,
+          "rank": 3,
+          "tie_group": 3,
+          "tie_group_highest_val_primary_pct": 77.14997672992907
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "S_0.5",
+          "val_primary_pct": 73.97006080344181,
+          "rank": 4,
+          "tie_group": 4,
+          "tie_group_highest_val_primary_pct": 73.97006080344181
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "S_0.333333",
+          "val_primary_pct": 68.00405236792041,
+          "rank": 5,
+          "tie_group": 5,
+          "tie_group_highest_val_primary_pct": 68.00405236792041
+        },
+        {
+          "dataset": "inria",
+          "family": "segformer_b5",
+          "path": "S_0.333333",
+          "val_primary_pct": 65.98977056604744,
+          "rank": 6,
+          "tie_group": 6,
+          "tie_group_highest_val_primary_pct": 65.98977056604744
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "S_0.25",
+          "val_primary_pct": 60.587556817984414,
+          "rank": 7,
+          "tie_group": 7,
+          "tie_group_highest_val_primary_pct": 60.587556817984414
+        },
+        {
+          "dataset": "inria",
+          "family": "segformer_b5",
+          "path": "S_0.25",
+          "val_primary_pct": 59.27358458135862,
+          "rank": 8,
+          "tie_group": 8,
+          "tie_group_highest_val_primary_pct": 59.27358458135862
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "S_0.166667",
+          "val_primary_pct": 47.8463723203844,
+          "rank": 9,
+          "tie_group": 9,
+          "tie_group_highest_val_primary_pct": 47.8463723203844
+        },
+        {
+          "dataset": "inria",
+          "family": "segformer_b5",
+          "path": "S_0.166667",
+          "val_primary_pct": 47.69562569726563,
+          "rank": 10,
+          "tie_group": 10,
+          "tie_group_highest_val_primary_pct": 47.69562569726563
+        },
+        {
+          "dataset": "inria",
+          "family": "segformer_b5",
+          "path": "S_0.125",
+          "val_primary_pct": 41.528754364042655,
+          "rank": 11,
+          "tie_group": 11,
+          "tie_group_highest_val_primary_pct": 41.528754364042655
+        },
+        {
+          "dataset": "inria",
+          "family": "dlv3",
+          "path": "S_0.125",
+          "val_primary_pct": 40.94912779392929,
+          "rank": 12,
+          "tie_group": 12,
+          "tie_group_highest_val_primary_pct": 40.94912779392929
+        }
+      ]
+    }
+  }
+}

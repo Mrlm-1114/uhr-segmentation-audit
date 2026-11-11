@@ -1,0 +1,612 @@
+{
+  "rows": [
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.125",
+      "latency_ms": 15.521203521639109,
+      "main_pct": 66.35136609954498
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.166667",
+      "latency_ms": 15.369363958016038,
+      "main_pct": 70.0334860533953
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.25",
+      "latency_ms": 22.9079669713974,
+      "main_pct": 71.94079087257278
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.333333",
+      "latency_ms": 38.10633193701506,
+      "main_pct": 72.99164498681034
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.5",
+      "latency_ms": 80.25658304803073,
+      "main_pct": 73.67156033420751
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.75",
+      "latency_ms": 190.24769720621407,
+      "main_pct": 73.42327935036458
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_1",
+      "latency_ms": 311.4066527457908,
+      "main_pct": 72.26035939748799
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 459.5003252848983,
+      "main_pct": 72.3907592270425
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "isdnet",
+      "path": "ISDNet_unified",
+      "latency_ms": 27.772333468310535,
+      "main_pct": 72.72915993733397
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "isdnet",
+      "path": "ISDNet_official_down_0.8",
+      "latency_ms": 95.87044774089009,
+      "main_pct": 73.2927148033213
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.125",
+      "latency_ms": 43.30705381464213,
+      "main_pct": 62.42349079679113
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.166667",
+      "latency_ms": 43.24169485364109,
+      "main_pct": 68.59162509570686
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.25",
+      "latency_ms": 43.36271893233061,
+      "main_pct": 71.53243398917998
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.333333",
+      "latency_ms": 44.53680573962629,
+      "main_pct": 74.09135503402194
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.5",
+      "latency_ms": 119.55703540705144,
+      "main_pct": 74.42346499616703
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.75",
+      "latency_ms": 453.96518691442907,
+      "main_pct": 74.55711342248219
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_1",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 645.4904989432544,
+      "main_pct": 73.74498945467424
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.125",
+      "latency_ms": 11.040181387215853,
+      "main_pct": 66.35052221022278
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.166667",
+      "latency_ms": 11.141145373694599,
+      "main_pct": 70.03298614142291
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.25",
+      "latency_ms": 13.25033268891275,
+      "main_pct": 71.93969893951486
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.333333",
+      "latency_ms": 17.119710128754377,
+      "main_pct": 72.99092131513031
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.5",
+      "latency_ms": 33.24107688385993,
+      "main_pct": 73.67053439617423
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.75",
+      "latency_ms": 73.06200442370027,
+      "main_pct": 73.42369371763066
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_1",
+      "latency_ms": 130.1171030756086,
+      "main_pct": 72.26080608766007
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 172.42715082131326,
+      "main_pct": 72.39149271677726
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "isdnet",
+      "path": "ISDNet_unified",
+      "latency_ms": 19.39833697397262,
+      "main_pct": 72.72796551124799
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "isdnet",
+      "path": "ISDNet_official_down_0.8",
+      "latency_ms": 86.18005020543933,
+      "main_pct": 73.2916976507774
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.125",
+      "latency_ms": 58.58464715536684,
+      "main_pct": 62.42518758633408
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.166667",
+      "latency_ms": 59.06382964923978,
+      "main_pct": 68.59253752345812
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.25",
+      "latency_ms": 57.94984609819949,
+      "main_pct": 71.53209856501907
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.333333",
+      "latency_ms": 58.53957197628915,
+      "main_pct": 74.09183879200049
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.5",
+      "latency_ms": 113.51105434820056,
+      "main_pct": 74.42223101686297
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.75",
+      "latency_ms": 491.7533005727455,
+      "main_pct": 74.55717827227494
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_1",
+      "latency_ms": 1165.7068234309554,
+      "main_pct": 74.53964473119991
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 476.37358505278826,
+      "main_pct": 73.74480070304679
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.125",
+      "latency_ms": 73.37423818185925,
+      "main_pct": 47.03936790764357
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.166667",
+      "latency_ms": 88.67801113054156,
+      "main_pct": 52.82361786720378
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.25",
+      "latency_ms": 134.8387926723808,
+      "main_pct": 63.571537437172445
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.333333",
+      "latency_ms": 196.89974954351783,
+      "main_pct": 69.88073833267316
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.5",
+      "latency_ms": 361.9449320342392,
+      "main_pct": 75.10369682491834
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_0.75",
+      "latency_ms": 807.5709869712591,
+      "main_pct": 78.11983374718558
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "S_1",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "dlv3",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 2525.9313991758972,
+      "main_pct": 78.73514310156263
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "isdnet",
+      "path": "ISDNet_unified",
+      "latency_ms": 148.46523775719106,
+      "main_pct": 70.88775290689127
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "isdnet",
+      "path": "ISDNet_official_down_0.8",
+      "latency_ms": 425.64910288900137,
+      "main_pct": 74.39435612958677
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.125",
+      "latency_ms": 57.758329743519425,
+      "main_pct": 47.768148520282736
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.166667",
+      "latency_ms": 57.88324291817844,
+      "main_pct": 52.823173518646236
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.25",
+      "latency_ms": 142.1877962909639,
+      "main_pct": 62.75512025158052
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.333333",
+      "latency_ms": 341.0499111376703,
+      "main_pct": 68.32690585793972
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.5",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_0.75",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "S_1",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "segformer_b5",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 3495.73403195478,
+      "main_pct": 80.95277229415929
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.125",
+      "latency_ms": 67.05394270829856,
+      "main_pct": 47.04003792615873
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.166667",
+      "latency_ms": 67.6220665872097,
+      "main_pct": 52.82408795457201
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.25",
+      "latency_ms": 85.99638901650906,
+      "main_pct": 63.57189272922118
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.333333",
+      "latency_ms": 111.96827432140708,
+      "main_pct": 69.8814002114095
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.5",
+      "latency_ms": 189.14702974259853,
+      "main_pct": 75.10415684023512
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_0.75",
+      "latency_ms": 362.2926112357527,
+      "main_pct": 78.12019748964065
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "S_1",
+      "latency_ms": 614.9745769612491,
+      "main_pct": 78.70892259156537
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "dlv3",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 948.5982165019959,
+      "main_pct": 78.73529498355023
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "isdnet",
+      "path": "ISDNet_unified",
+      "latency_ms": 112.10372335277498,
+      "main_pct": 70.88455769514239
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "isdnet",
+      "path": "ISDNet_official_down_0.8",
+      "latency_ms": 363.97419570945203,
+      "main_pct": 74.39392150321007
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.125",
+      "latency_ms": 74.76467785425484,
+      "main_pct": 47.764731732474736
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.166667",
+      "latency_ms": 71.81650124490261,
+      "main_pct": 52.820881836768265
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.25",
+      "latency_ms": 142.7719053067267,
+      "main_pct": 62.754617437034085
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.333333",
+      "latency_ms": 285.4398414120078,
+      "main_pct": 68.32702803777522
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.5",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_0.75",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "S_1",
+      "latency_ms": null,
+      "main_pct": null
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "segformer_b5",
+      "path": "native_slide_1024_stride_768",
+      "latency_ms": 2516.8305673543364,
+      "main_pct": 80.95226583891117
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp32",
+      "family": "isdnet",
+      "path": "ISDNet_unified_S_0.8",
+      "latency_ms": 20.63991362694651,
+      "main_pct": 73.28831333749308
+    },
+    {
+      "dataset": "deepglobe",
+      "precision": "fp16",
+      "family": "isdnet",
+      "path": "ISDNet_unified_S_0.8",
+      "latency_ms": 14.909176575019956,
+      "main_pct": 73.28749447988825
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp32",
+      "family": "isdnet",
+      "path": "ISDNet_unified_S_0.8",
+      "latency_ms": 110.64152223058045,
+      "main_pct": 74.40523678254215
+    },
+    {
+      "dataset": "inria",
+      "precision": "fp16",
+      "family": "isdnet",
+      "path": "ISDNet_unified_S_0.8",
+      "latency_ms": 87.43095129728317,
+      "main_pct": 74.40549251712164
+    }
+  ]
+}

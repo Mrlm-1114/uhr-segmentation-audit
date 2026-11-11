@@ -1,0 +1,22 @@
+{
+  "deepglobe": {
+    "historical_deeplab": 63.5,
+    "specialized": 80.22,
+    "isdnet_published": 73.3
+  },
+  "inria": {
+    "historical_deeplab": 55.9,
+    "specialized": 83.39,
+    "isdnet_published": 74.23
+  },
+  "urur": {
+    "DeepLabV3+ R18": 33.1,
+    "ISDNet": 45.8,
+    "WSDNet": 46.9,
+    "Relay": 46.4,
+    "RUE": 48.2,
+    "CASWiT": 49.2,
+    "SRMF": 47.02
+  },
+  "note": "Published references retain the original reported metrics and pipelines. They are not remeasured values."
+}

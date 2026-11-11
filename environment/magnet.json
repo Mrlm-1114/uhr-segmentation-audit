@@ -1,0 +1,15 @@
+{
+  "python": "3.10.20",
+  "numpy": "1.26.4",
+  "torch": "2.0.0+cu118",
+  "cuda": "11.8",
+  "cudnn": 8700,
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "cudnn_benchmark": true,
+  "torch_num_threads": 4,
+  "torch_num_interop_threads": 1,
+  "opencv": "4.10.0",
+  "opencv_num_threads": 1,
+  "device": "NVIDIA GeForce RTX 4090"
+}

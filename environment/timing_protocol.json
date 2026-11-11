@@ -1,0 +1,9 @@
+{
+  "warmup_passes": 2,
+  "repeats": 5,
+  "batch_size": 1,
+  "seed": 20260930,
+  "selection": "default_rng(seed), choice without replacement, sorted split positions; reset seed for each dataset",
+  "endpoint": "decoded CPU RGB uint8 -> GPU full-resolution class map",
+  "synchronize_before_after": true
+}

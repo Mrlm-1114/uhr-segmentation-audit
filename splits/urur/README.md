@@ -1,0 +1,1 @@
+URUR is available from its authors under their terms. Obtain the benchmark and authorized split definitions from its authors. No URUR identifiers or split lists are distributed here. Supply local split files outside this repository.

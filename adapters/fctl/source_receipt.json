@@ -1,0 +1,75 @@
+{
+  "source_files": [
+    {
+      "path": "dataset/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "dataset/deep_globe.py",
+      "sha256": "387a287b6b0363cbb6259fed9d77c7d3c82afa32a293bbfe700afc365d5ef4cb"
+    },
+    {
+      "path": "helper.py",
+      "sha256": "819476ac454cf6a34cba9d85fe6fd1f7fa87f193cabe30af4b9a8d93a300f60c"
+    },
+    {
+      "path": "models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "models/base_model.py",
+      "sha256": "2b51b4edb9ffd7d41b044a6648644d49c64f5f20150020e95d6f71fe96fc142c"
+    },
+    {
+      "path": "models/fcn.py",
+      "sha256": "44f8bfe81920a9623e4852d509e1f775069df3b3e3252e0c14032e9161ec6db8"
+    },
+    {
+      "path": "models/FCtL.py",
+      "sha256": "0990f4b878932c9db9291963aa7264aac2bcf8b9999828816e4e0cb273e691ca"
+    },
+    {
+      "path": "models/helpers.py",
+      "sha256": "94fd44beb4122001105ba7b9c4e87555da38cd4e4b4d6469ccb5241dba05c548"
+    },
+    {
+      "path": "models/model_store.py",
+      "sha256": "d9c3bc3554de9dd9cfeb4f9a62c082ff7c19266e3ac5fbfa5cc7f07b68b24a08"
+    },
+    {
+      "path": "option.py",
+      "sha256": "40f9e23d90a84a70d3090222daf49cd7c2a8e3ec9c3e07a6631d64b1c4076d0b"
+    },
+    {
+      "path": "train_deep_globe.py",
+      "sha256": "243068c2c6c171ba390ffef055c1bec12203af20117597ae66888a7a8e20aa45"
+    },
+    {
+      "path": "utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "utils/loss.py",
+      "sha256": "b64b00cdf345838df799c45eb4f3b9a45516e6c5f9bf5cca758922a64d88c3a8"
+    },
+    {
+      "path": "utils/lr_scheduler.py",
+      "sha256": "5d36820e3e7365655c7260d658e89fa85c41737abe285e7af082ba5d4f4ba886"
+    },
+    {
+      "path": "utils/metrics.py",
+      "sha256": "597b808a65402fa079af31983baf7268d0004b2733373a49a465a6328b6e2dea"
+    }
+  ],
+  "files": [
+    {
+      "name": "all.epoch.pth"
+    },
+    {
+      "name": "B10.epoch.pth"
+    },
+    {
+      "name": "B15.epoch.pth"
+    }
+  ]
+}

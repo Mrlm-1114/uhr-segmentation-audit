@@ -1,0 +1,4 @@
+vertex,model,route,latency_ms,test_miou_8class_percent,interpolation_space,truncated_at_max_accuracy
+1,R50,scale_1_6,71.15744930226356,44.21891596732962,physical_ms_linear,True
+2,B5,scale_1_8,91.17952921893448,46.76262710013396,physical_ms_linear,True
+3,B5,scale_1_4,168.62495945766568,48.51296176872515,physical_ms_linear,True

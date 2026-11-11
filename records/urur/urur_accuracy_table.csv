@@ -1,0 +1,21 @@
+group,model,test_miou_8class_percent,latency_ms_R5_T,protocol_note,route,val_miou_8class_percent
+published,PSPNet,32.0,,,,
+published,DeepLabv3+,33.1,,,,
+published,STDC,42.0,,,,
+published,GLNet,41.2,,,,
+published,FCtL,43.1,,,,
+published,ISDNet,45.8,,,,
+published,WSDNet,46.9,,,,
+published,RUE K=100%,48.2,,,,
+published,RUE K=75%,47.9,,,,
+published,RUE K=50%,47.4,,,,
+published,SwinV2 + relays,46.4,,,,
+published,DeepLabv3,41.7,,,,
+published,U-Net,43.1,,,,
+published,CASWiT,49.2,,8classes official,,
+published,SRMF,47.02,,see literature audit; SRMF exact split not independently confirmed,,
+retrained,R18,45.662681561418665,,,scale_1_4,51.75855158973251
+retrained,R50,45.74585211782878,117.07151623442769,,scale_1_4,52.77900882073337
+retrained,B5,48.51296176872515,168.62495945766568,,scale_1_4,52.844521459533354
+retrained_supplement,ISDNet,44.276875067556624,803.5015017120168,,ISDNet_official,
+retrained_supplement,ISDNet,44.27687507641109,190.93762330710888,,ISDNet_gpu,

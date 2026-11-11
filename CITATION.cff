@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript."
+title: "When Does Specialization Pay Off in Ultra-High-Resolution Remote Sensing Segmentation? Auditing Baselines, Metrics, and End-to-End Efficiency"
+type: software
+authors:
+  - family-names: Ma
+    given-names: Keyao
+    orcid: "https://orcid.org/0009-0000-9854-6666"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-11"
+preferred-citation:
+  type: unpublished
+  title: "When Does Specialization Pay Off in Ultra-High-Resolution Remote Sensing Segmentation? Auditing Baselines, Metrics, and End-to-End Efficiency"
+  authors:
+    - family-names: Ma
+      given-names: Keyao
+  year: 2026
+  notes: "Manuscript under review."
+repository-code: "https://github.com/Mrlm-1114/uhr-segmentation-audit"

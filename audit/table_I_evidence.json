@@ -1,0 +1,1428 @@
+{
+  "methods": [
+    {
+      "method": "GLNet",
+      "dataset": "DeepGlobe",
+      "repository_url": "https://github.com/VITA-Group/GLNet",
+      "repository_commit": "7b7bdee196e368a1f3a32c54b984915f8e397275",
+      "baseline_origin_label": "Rerun",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The authors describe separate global and local training and testing of the generic models. The specific DeepLab recipe is not reported.",
+      "fields": {
+        "split": {
+          "value": "The released train/val/test lists contain 454/207/142 distinct images, with no duplicates or intersections, and match the corresponding MagNet sets. The CVPR paper reports 455/142/206. The split version used for the published table is unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train.txt#L1; lines 1-454",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/crossvali.txt#L1; lines 1-207",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/test.txt#L1; lines 1-142",
+            "key GLNet",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 (printed 8929), §4.2"
+          ],
+          "paper_claim": "455/142/206",
+          "paper_claim_evidence_level": "Explicitly reported in the paper"
+        },
+        "class_set": {
+          "value": "The logged summary averages 6 classes. Class 0 (unknown) remains in the pooled 7x7 confusion matrix and is excluded only from the final IoU mean. The seven-class iou_mean in metrics.py is not the value used by the main log.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/eval_deep_globe.sh#L3; lines 3",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/dataset/deep_globe.py#L22; lines 22-41",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/utils/metrics.py#L16; lines 16-48",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L124; lines 124-126",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L156; lines 156-174"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p7 Table3 (DeepGlobe)"
+          ]
+        },
+        "aggregation": {
+          "value": "The implementation accumulates a 7x7 confusion matrix across images, computes class IoUs, and averages the six named classes. nan_to_num maps absent-class values to 0.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/utils/metrics.py#L21; lines 21-48",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/helper.py#L538; lines 538-540",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L124; lines 124-126"
+          ]
+        },
+        "test_input": {
+          "value": "The paper specifies 500x500 global and local inputs and at least 50 pixels of patch overlap. The released evaluation script uses local patches and a global image resized to 508x508; local inputs are also 508x508. The default test=False branch has no TTA. The alternative test branch uses horizontal flipping and four rotations. This evidence is from code inspection.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 §4.1",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/eval_deep_globe.sh#L8; lines 8-16",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L39; lines 39",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/helper.py#L402; lines 402-407",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/helper.py#L425; lines 425-431"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "Paper Table 3 explicitly refers to the local DeepGlobe test set. The released eval_deep_globe.sh runs the crossvali validation directory.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p7 (printed8930), Table3",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L39; lines 39-55",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L118; lines 118-126"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "Both reported class means exclude unknown. The released evaluation defaults to validation, whereas the paper table describes test results. The paper's 500-pixel input differs from the code's 508-pixel input, and the reported split counts differ from the released lists. The execution underlying the published scores remains unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/train_deep_globe.py#L39; lines 39-55",
+            "https://github.com/VITA-Group/GLNet/blob/7b7bdee196e368a1f3a32c54b984915f8e397275/eval_deep_globe.sh#L11; lines 11-12",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 §4.1–4.2",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p7 Table3"
+          ]
+        },
+        "baseline_source": {
+          "value": "The source table reports DeepLabv3+ local 63.1 and global 63.5. The authors describe training and testing each method globally and locally. Patch training/inference uses 500x500 inputs, while each global model uses a feasible downsampling setting to control memory. The exact DeepLab global input size, backbone, initialization and epoch count are not reported, and its configuration is absent from the repository. The GLNet R50-FPN recipe describes a different model.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 §4.2.2; p7 Table3 and footnotes4–5",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p10 refs42–43"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The paper measures memory on a 1080Ti using gpustat, with gradients disabled and measurement batch 1. It reports no FPS or milliseconds. Training uses batch 6; timing precision and boundaries are unresolved. The later FCtL paper reports 6 s per DeepGlobe image for GLNet, as a measurement by FCtL's authors.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 §4.1",
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p8 (printed7259), Memory cost and timing performance"
+          ]
+        }
+      }
+    },
+    {
+      "method": "GLNet",
+      "dataset": "Inria",
+      "repository_url": "https://github.com/VITA-Group/GLNet",
+      "repository_commit": "7b7bdee196e368a1f3a32c54b984915f8e397275",
+      "baseline_origin_label": "Rerun",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The authors describe separate global and local training and testing of the generic models. The specific DeepLab recipe is not reported.",
+      "fields": {
+        "split": {
+          "value": "The paper describes a random 126/27/27 split. The released GLNet repository has no Inria lists, so the identities of the evaluated samples are unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p8 (printed8931), §4.4",
+            "key tree.tree"
+          ]
+        },
+        "class_set": {
+          "value": "Binary building/non-building labels; the choice between building IoU and a two-class mean is unclear.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p8 §4.4 and Table7"
+          ]
+        },
+        "inria_metric": {
+          "value": "Table 7 labels DeepLabv3+ 55.9 and GLNet 71.2 as mIoU. The paper does not explicitly define building-only versus two-class averaging. The released implementation covers DeepGlobe; the original Inria metric remains unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p8 Table7",
+            "key tree.tree"
+          ]
+        },
+        "aggregation": {
+          "value": "The inspected repository has no original Inria evaluation code. Pooled versus imagewise aggregation is unresolved; the available DeepGlobe implementation does not specify the Inria procedure.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "key tree.tree"
+          ]
+        },
+        "test_input": {
+          "value": "The generic implementation description uses global/local 500x500 inputs and 50-pixel patch overlap. Inria-specific code and TTA settings are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 §4.1; p8 §4.4"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "Paper Table 7 describes the local Inria Aerial test set.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p8 Table7"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official Inria implementation was not available in the inspected repository, so agreement between its defaults and the paper is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "key tree.tree"
+          ]
+        },
+        "baseline_source": {
+          "value": "The earliest verified DeepLabv3+ 55.9 entry is GLNet Table 7. The paper describes training and comparing the generic baselines, but does not fully specify the Inria DeepLab input, backbone, initialization, epochs or metric formula.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p8 Table7; p6 §4.2.2",
+            "https://openaccess.thecvf.com/content_CVPR_2019/supplemental/Chen_Collaborative_Global-Local_Networks_CVPR_2019_supplemental.pdf; PDF pp1–2, baseline-selection rationale"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The GLNet paper reports memory on a 1080Ti with batch 1 and gradients disabled: Inria GLNet 2663 MB and DeepLab 4323 MB. The later 19 s/image GLNet result is reported by FCtL, rather than in GLNet's paper.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p6 §4.1; p8 Table7",
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p8 timing paragraph"
+          ]
+        }
+      }
+    },
+    {
+      "method": "MagNet",
+      "dataset": "DeepGlobe",
+      "repository_url": "https://github.com/VinAIResearch/MagNet",
+      "repository_commit": "7f5b8760cb471230402015d80117559de0e38600",
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The matching DeepGlobe value 63.50 does not resolve whether this row was rerun or cited.",
+      "fields": {
+        "split": {
+          "value": "The released lists contain 454/207/142 distinct images, with no duplicates or intersections, and match GLNet's three sets. The paper reports 455/207/142, which sums to 804 rather than its stated total of 803. The released lists contain 803 entries. The reason for the reported count difference is unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "key MagNet",
+            "key GLNet_MagNet_correspondence",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/data/list/deepglobe/train.txt#L1; lines 1-454",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/data/list/deepglobe/val.txt#L1; lines 1-207",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/data/list/deepglobe/test.txt#L1; lines 1-142",
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p8 (printed16762), §4.3"
+          ]
+        },
+        "class_set": {
+          "value": "6-class mIoU. The 7x7 confusion matrix retains unknown=0 (dataset.ignore_label=-1), and the final mean uses IoU[1:]. Unknown pixels remain in matrix accumulation. The paper explicitly describes following GLNet's unknown-excluded mIoU policy.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/magnet/dataset/deepglobe.py#L9; lines 9-17",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/magnet/dataset/base.py#L50; lines 50-53",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/magnet/utils/metrics.py#L4; lines 4-22",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/magnet/utils/metrics.py#L63; lines 63-79",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L255; lines 255-264",
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p8 §4.3"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable: the paper evaluates Cityscapes and Gleason in addition to DeepGlobe, but not Inria.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p5 Table2"
+          ]
+        },
+        "aggregation": {
+          "value": "conf_mat and refined_conf_mat accumulate across images before get_overall_iou, giving pooled aggregation. The progress bar separately displays imagewise frequency-weighted IoU; the final summary uses the pooled metric.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L116; lines 116-117",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L253; lines 253-265",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L300; lines 300-302",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/magnet/utils/metrics.py#L63; lines 63-114"
+          ]
+        },
+        "test_input": {
+          "value": "Three scales: 612 to 1224 to 2448. At each scale, nonoverlapping 612-pixel patches are resized to 508x508 for FPN-R50. The test script uses sub_batch_size=1 without flip/rotation TTA. The paper specifies 2^16 refinement points per scale; the script's n_points=0.75 selects 75% of that scale's pixels, a different setting.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/scripts/deepglobe/test_magnet.sh#L1; lines 1-17",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/magnet/dataset/base.py#L55; lines 55-63",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L218; lines 218-224",
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p5 Testing; p8 §4.3"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "Test split: the released test script explicitly selects data/list/deepglobe/test.txt.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/scripts/deepglobe/test_magnet.sh#L3; lines 3",
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p8 §4.3, Table8"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "The six-class metric matches the paper. The released training list has 454 entries, whereas the paper reports 455. Refinement uses a relative 0.75 setting in the script and an absolute 2^16 points in the paper. The effect on the reported table scores is unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/scripts/deepglobe/test_magnet.sh#L13; lines 13",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L218; lines 218-224",
+            "key MagNet",
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p8 §4.3"
+          ]
+        },
+        "baseline_source": {
+          "value": "Table 8 reports DeepLabv3+ downsampling 63.50 and patch 69.69. The global value matches GLNet, while the patch value differs. The text does not identify which rows were rerun or cited, so row-level provenance remains unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p8 Table8 and §4.3",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p7 Table3"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The paper reports seconds/image of 1.19 for MagNet, 0.29 for Fast and 0.37 for GLNet, on an Intel i7 plus RTX2080Ti. The released code uses image batch 1 and patch batch 1. Its timer starts after DataLoader patch preparation, includes inference and multiscale refinement, and ends before final argmax, CPU export, metrics and saving. Explicit synchronization, warm-up and repetition are not present in the inspected timer. Paper precision and equivalence to that released timer are unresolved; FP32 is inferred from the code default.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Huynh_Progressive_Semantic_Segmentation_CVPR_2021_paper.pdf; PDF p5 Testing; p8 Table8",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L72; lines 72",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L127; lines 127-141",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/test.py#L251; lines 251-265",
+            "https://github.com/VinAIResearch/MagNet/blob/7f5b8760cb471230402015d80117559de0e38600/scripts/deepglobe/test_magnet.sh#L12; lines 12"
+          ]
+        }
+      }
+    },
+    {
+      "method": "FCtL",
+      "dataset": "DeepGlobe",
+      "repository_url": "https://github.com/liqiokkk/FCtL",
+      "repository_commit": "6fdb0c02f22efbf267781857c9ee7f7ebc951974",
+      "baseline_origin_label": "Cited, with rerun exceptions",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The historical DeepLab values come from GLNet; FCN-8s, CascadePSP and some other rows were rerun.",
+      "fields": {
+        "split": {
+          "value": "The paper follows GLNet and reports 455/207/142. The inspected repository supplies only Inria lists in txt_1; the actual DeepGlobe lists are absent. Whether the evaluated split differs is unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p5 (printed7256), §4.1",
+            "key tree.tree"
+          ]
+        },
+        "class_set": {
+          "value": "The paper states that unknown is excluded, indicating 6-class reporting. The released DeepGlobe label-reading branch is pass, leaving its treatment of unknown pixels in matrix accumulation unresolved. The shared metrics module is available, but a complete executed DeepGlobe evaluation path is absent.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p5 §4.1",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/dataset/deep_globe.py#L76; lines 76-81"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p7 Table1"
+          ]
+        },
+        "aggregation": {
+          "value": "The released DeepGlobe path is incomplete. The shared ConfusionMatrix pools counts and averages iou[1:], but its use for the paper's DeepGlobe results is inferred rather than confirmed.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/utils/metrics.py#L12; lines 12-29",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/dataset/deep_globe.py#L76; lines 76-81"
+          ]
+        },
+        "test_input": {
+          "value": "The paper specifies local 508x508, medium 1524x1524 and large 2448x2448 contexts, each normalized to 508-pixel input, with adjacent-patch overlap 120x508 and separate mask refinement. DeepGlobe TTA settings are unresolved. The later ISDNet paper, p.5 footnote 2, explicitly states that the original FCtL paper uses TTA. The exact 8-way DeepGlobe configuration is not confirmed by the released DeepGlobe code.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2; p7 §4.4; p8 Table4",
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf; PDF p5 footnote2"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "The text describes train/val/test and a common train/test protocol, but Table 1 does not independently name its split. Test-set use is inferred; the released DeepGlobe evaluation path is incomplete.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p5 §4.1; p6 §4.3; p7 Table1"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "The repository defaults to dataset 2 (Inria), and the DeepGlobe label-reading branch is pass. The released code therefore does not provide a complete DeepGlobe table-reproduction path. The reported split, 120-pixel overlap and global-context settings remain unresolved for DeepGlobe execution.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/option.py#L15; lines 15",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/test.sh#L5; lines 5",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/dataset/deep_globe.py#L76; lines 76-81"
+          ]
+        },
+        "baseline_source": {
+          "value": "The generic rows in Table 1, including DeepLabv3+ local 63.1/global 63.5, match GLNet Table 3. Section 4.3 explicitly attributes most quantitative results to GLNet. FCN-8s uses the authors' own training strategy, and CascadePSP was also trained by the authors. DeepLab row reuse is supported by the explicit attribution and matching entries.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2–4.3; p7 Table1",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p7 Table3"
+          ]
+        },
+        "latency_protocol": {
+          "value": "1080Ti; segmentation 0.15 s/patch and refinement 0.06 s/patch. Complete DeepGlobe-image times are 8 s for FCtL, 3 s for FCN, 6 s for GLNet and 9 s for CascadePSP. Timing batch, precision and preprocessing/postprocessing boundaries are not reported. Training uses gradient accumulation with batch 6.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2; p8 timing paragraph"
+          ]
+        }
+      }
+    },
+    {
+      "method": "FCtL",
+      "dataset": "Inria",
+      "repository_url": "https://github.com/liqiokkk/FCtL",
+      "repository_commit": "6fdb0c02f22efbf267781857c9ee7f7ebc951974",
+      "baseline_origin_label": "Cited, with rerun exceptions",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The historical DeepLab values come from GLNet; FCN-8s, CascadePSP and some other rows were rerun.",
+      "fields": {
+        "split": {
+          "value": "The paper and released txt_1 lists use 126/27/27, with no duplicates or intersections. Code enumerates the train/crossvali/offical_crossvali directories. The README does not provide an additional mapping check for test.txt.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "key FCtL",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/txt_1/train.txt#L1; lines 1-126",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/txt_1/crossvali.txt#L1; lines 1-27",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/txt_1/test.txt#L1; lines 1-27",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L53; lines 53-62",
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p5 §4.1"
+          ]
+        },
+        "class_set": {
+          "value": "Two network classes: 0 background and 1 building; scoring selects class 1. Supplement Figure 5 and code classToRGB(1) both identify white as building.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L23; lines 23-24",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/dataset/deep_globe.py#L16; lines 16-25",
+            "https://openaccess.thecvf.com/content/ICCV2021/supplemental/Li_From_Contexts_to_ICCV_2021_supplemental.zip; PDF p4 Figure5",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/utils/metrics.py#L26; lines 26-29"
+          ]
+        },
+        "inria_metric": {
+          "value": "The released iou_mean function returns building IoU. Paper Table 2 labels the column mIOU and reports FCtL 73.7. The default test branch saves predictions without scoring them, so the checkpoint and scoring version associated with 73.7 remain unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/utils/metrics.py#L23; lines 23-33",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L132; lines 132-134",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L161; lines 161-174",
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p7 Table2"
+          ]
+        },
+        "aggregation": {
+          "value": "Pooled 2x2 confusion matrix, followed by class-1 IoU.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/utils/metrics.py#L12; lines 12-29",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L365; lines 365-367"
+          ]
+        },
+        "test_input": {
+          "value": "The paper specifies local 508-pixel inputs and 1016/1524-pixel contexts resized to 508. The official dataset-2 test uses 508-pixel patches and 8 TTA transforms: horizontal flip combined with 0/90/180/270-degree rotations, followed by full-image patch reconstruction. Validation (train=True passed to Evaluator.val) has no TTA. Patch overlap adapts to image size with a minimum of 50 pixels, differing from the paper's fixed 120. ISDNet p.5 footnote 2 also identifies TTA in the original FCtL paper.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/test.sh#L3; lines 3-12",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/option.py#L18; lines 18-19",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L102; lines 102",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L66; lines 66-83",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L286; lines 286-302",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L320; lines 320-367",
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2; p7 §4.4",
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf; PDF p5 footnote2"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "The paper's context indicates test results, although Table 2 does not independently name the split. Official test.sh exports masks from offical_crossvali, while validation IoU is computed on crossvali. These are separate evaluation paths.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.3; p7 Table2",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L53; lines 53-62",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L125; lines 125-134",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/train_deep_globe.py#L161; lines 161-174"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "The paper's mIOU label differs from the code's building-IoU definition. Default testing exports masks with 8-way TTA, while the scoring path is validation without TTA. The main released test script does not invoke the paper's separate mask-refinement network. The paper's fixed 120-pixel overlap differs from the code's adaptive minimum of 50. The execution version underlying the published scores is unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/utils/metrics.py#L29; lines 29",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/test.sh#L1; lines 1-12",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L66; lines 66-83",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L311; lines 311-369",
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2; p7 Table2"
+          ]
+        },
+        "baseline_source": {
+          "value": "DeepLabv3+ 55.9 and GLNet 71.2 are taken from GLNet. Table 2 FCN-8s 69.1 and CascadePSP 69.4 were retrained by the FCtL authors. The original metric definition of 55.9 remains unresolved despite FCtL's own building-only scorer.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2–4.3; p7 Table2",
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Collaborative_Global-Local_Networks_for_Memory-Efficient_Segmentation_of_Ultra-High_Resolution_Images_CVPR_2019_paper.pdf; PDF p8 Table7"
+          ]
+        },
+        "latency_protocol": {
+          "value": "1080Ti; Inria times are FCtL 26 s/image, GLNet 19 s, FCN 9 s and CascadePSP 37 s; segmentation/refinement cost 0.15/0.06 s per patch. Timing batch, TTA, precision and preprocessing/postprocessing boundaries are not reported. The released test settings are image batch 6, patch batch 16 and 8-way TTA; their equivalence to the paper's timing protocol is unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_From_Contexts_to_Locality_Ultra-High_Resolution_Image_Segmentation_via_Locality-Aware_ICCV_2021_paper.pdf; PDF p6 §4.2; p8 timing paragraph",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/test.sh#L6; lines 6-7",
+            "https://github.com/liqiokkk/FCtL/blob/6fdb0c02f22efbf267781857c9ee7f7ebc951974/helper.py#L297; lines 297-302"
+          ]
+        }
+      }
+    },
+    {
+      "method": "ISDNet",
+      "dataset": "DeepGlobe",
+      "repository_url": "https://github.com/cedricgsh/ISDNet",
+      "repository_commit": "7341335677fd6201457b321e1e6368feb7ad647e",
+      "baseline_origin_label": "Cited, with remeasurement exceptions",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "DeepGlobe accuracy is taken from MagNet and Inria accuracy from FCtL; FCtL is separately remeasured without TTA.",
+      "fields": {
+        "aggregation": {
+          "value": "pooled: accumulate class intersections/unions across images before averaging class IoUs",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/core/evaluation/metrics.py#L116",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368"
+          ]
+        },
+        "test_input": {
+          "value": "official tools/test.py defaults down_test=True (store_false): ratio 0.8 and flip=False; whole mode. DeepGlobe nominal2448 -> resized1958; Inria nominal5000 ->4000. Aug-test flip is overwritten while down_test remains enabled. Local reference uses full resolution.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/tools/test.py#L23; https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/tools/test.py#L96",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/models/isdnet_r50-d8.py#L1",
+            ""
+          ]
+        },
+        "eval_split_reported": {
+          "value": "The paper reports results on its study split. Official cfg.data.test reads test folders, but the released checkpoint test-ID manifest is absent. Equivalence to the study validation split is unresolved.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/datasets/deepglobe_1224x1224.py#L38",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/datasets/aeril_2500x2500.py#L37"
+          ]
+        },
+        "latency_protocol": {
+          "value": "Paper: FPS on RTX2080Ti, batch1. Official fps_test.py: default ratio0.8, FP32 unless cfg.fp16, random GPU tensor, 100 warmup+300 measured, perf_counter and CUDA synchronize before/after, forward_dummy. Excludes data read/resize/normalization and postprocess. Supplemental reports ~5ms CPU Gaussian pyramid, overlapped with prefetch, rather than included in GPU timer.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/tools/fps_test.py#L15",
+            "ISDNet supplemental PDF section3"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "DeepLabv3 ResNet18 deep branch and STDC shallow branch; paper says ImageNet initialization. Public config uses open-mmlab://resnet18_v1c; this is not the users DLV3+ R50.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/isdnet/isdnet_r18-d8_1224x1224_80k_DeepGlobe.py#L1"
+          ]
+        },
+        "split": {
+          "value": "The paper states 803 images and a 455/207/142 split, which totals 804. The README describes following FCtL; the official repository supplies no split lists. This study uses 454/207/142 lists inherited from GLNet.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/README.md#L33",
+            "ID lists only"
+          ]
+        },
+        "class_set": {
+          "value": "Code default: 7 classes, unknown=0 included in mean, reduce_zero_label=False, ignore_index255. Paper: unknown excluded from evaluation. README reports six valid IoUs and dash forunknown. Exclusion from mean vs removing unknown GT not fully specified in prose; local Step0 provides both variants.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/deepglobe.py#L18",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/core/evaluation/metrics.py#L65",
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/README.md#L86"
+          ]
+        },
+        "inria_metric": {
+          "value": "not applicable",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/deepglobe.py#L18"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "Confirmed mismatch: official default seven-class mIoU vs six-class paper metric. Existing Step0 test summary (not labels read inR0): seven66.26383865457706, six with unknown retained73.29271702165529, six with unknown GT removed73.302276304756. This isolates a metric choice for the same stored prediction result; it does not measure the effect of changing input scale.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/deepglobe.py#L18",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368",
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2"
+          ]
+        },
+        "baseline_source": {
+          "value": "Table1 DeepLabv3+global63.50/local69.69. Caption explicitly collects competitor accuracy from MagNet[18]. FCtL model is re-evaluated without TTA per PDFp5 footnote2; it is an exception to general reuse.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p6 / printed p4366, Table 1",
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2"
+          ]
+        }
+      }
+    },
+    {
+      "method": "ISDNet",
+      "dataset": "Inria",
+      "repository_url": "https://github.com/cedricgsh/ISDNet",
+      "repository_commit": "7341335677fd6201457b321e1e6368feb7ad647e",
+      "baseline_origin_label": "Cited, with remeasurement exceptions",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "DeepGlobe accuracy is taken from MagNet and Inria accuracy from FCtL; FCtL is separately remeasured without TTA.",
+      "fields": {
+        "aggregation": {
+          "value": "pooled: accumulate class intersections/unions across images before averaging class IoUs",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/core/evaluation/metrics.py#L116",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368"
+          ]
+        },
+        "test_input": {
+          "value": "official tools/test.py defaults down_test=True (store_false): ratio 0.8 and flip=False; whole mode. DeepGlobe nominal2448 -> resized1958; Inria nominal5000 ->4000. Aug-test flip is overwritten while down_test remains enabled. Local reference uses full resolution.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/tools/test.py#L23; https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/tools/test.py#L96",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/models/isdnet_r50-d8.py#L1",
+            ""
+          ]
+        },
+        "eval_split_reported": {
+          "value": "The paper reports results on its study split. Official cfg.data.test reads test folders, but the released checkpoint test-ID manifest is absent. Equivalence to the study validation split is unresolved.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/datasets/deepglobe_1224x1224.py#L38",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/datasets/aeril_2500x2500.py#L37"
+          ]
+        },
+        "latency_protocol": {
+          "value": "Paper: FPS on RTX2080Ti, batch1. Official fps_test.py: default ratio0.8, FP32 unless cfg.fp16, random GPU tensor, 100 warmup+300 measured, perf_counter and CUDA synchronize before/after, forward_dummy. Excludes data read/resize/normalization and postprocess. Supplemental reports ~5ms CPU Gaussian pyramid, overlapped with prefetch, rather than included in GPU timer.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/tools/fps_test.py#L15",
+            "ISDNet supplemental PDF section3"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "DeepLabv3 ResNet18 deep branch and STDC shallow branch; paper says ImageNet initialization. Public config uses open-mmlab://resnet18_v1c; this is not the users DLV3+ R50.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/isdnet/isdnet_r18-d8_1224x1224_80k_DeepGlobe.py#L1"
+          ]
+        },
+        "split": {
+          "value": "Paper126/27/27. Public config uses test folders and release does not include checkpoint-specific ID manifest. Local reference evaluates27 FCtL crossvali images.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p5 / printed p4365, sections 4.1-4.2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/configs/_base_/datasets/aeril_2500x2500.py#L36",
+            ""
+          ]
+        },
+        "class_set": {
+          "value": "background0 andbuilding1; reduce_zero_label=False; ignore_index255. Both classes included in default mean.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/inria_aerial.py#L18",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368"
+          ]
+        },
+        "inria_metric": {
+          "value": "Paper Table2 header mIoU, value74.23; exact definition not explicitly resolved. README class IoUs74.39(building)/97.58(background), arithmetic mean85.985. Default code computes two-class pooled mean. Interpreting74.23 as buildingIoU is plausible but remains inference.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p7 / printed p4367, Table 2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/README.md#L86",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "The code default averages both classes. The reported 74.23 differs from the README class scores 74.39/97.58. The metric definition of 74.23 is unresolved.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p7 / printed p4367, Table 2",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/README.md#L86",
+            "https://github.com/cedricgsh/ISDNet/blob/7341335677fd6201457b321e1e6368feb7ad647e/mmseg/datasets/custom.py#L368"
+          ]
+        },
+        "baseline_source": {
+          "value": "Table2 caption explicitly states competitors accuracy collected from FCtL [22], with speed/memory measured under ISDNet environment. DeepLabv3+55.90 is an Inria row.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_ISDNet_Integrating_Shallow_and_Deep_Networks_for_Efficient_Ultra-High_Resolution_CVPR_2022_paper.pdf PDF p7 / printed p4367, Table 2"
+          ]
+        }
+      }
+    },
+    {
+      "method": "F2Net",
+      "dataset": "DeepGlobe",
+      "repository_url": "https://github.com/easm002/F2Net",
+      "repository_commit": "6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb",
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The final version updates the DeepGlobe values to 70.10/64.10; rerun versus citation is not explicitly reported.",
+      "fields": {
+        "split": {
+          "value": "The paper reports 455/207/142, totaling 804, while the same paragraph states 803. The repository supplies no lists. Its default split (455,207,142) triggers a total-count assertion for 803 IDs; external --lists are supported. The paper's actual split and duplicate policy are unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 / proceedings p13279 §4.1",
+            "F2Net/datasets/prepare_deepglobe.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/datasets/prepare_deepglobe.py; L55–74, L82–94"
+          ]
+        },
+        "class_set": {
+          "value": "The paper describes evaluation over six named classes, excluding unknown; Supplement Table 8 lists six classes. The actual invocation does not specify whether unknown pixels are removed or only their class IoU is excluded from averaging.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1",
+            "F2S; https://openaccess.thecvf.com/content/CVPR2026/supplemental/Chen_F2Net_A_Frequency-Fused_CVPR_2026_supplemental.pdf; PDF p1 Table8"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p6 / proceedings p13280 Table2",
+            "F2Net/utils/metrics.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/utils/metrics.py; L24–40"
+          ]
+        },
+        "aggregation": {
+          "value": "The released metrics module accumulates a pooled confusion matrix. Training/testing entry points are absent, leaving its use in the published results unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "F2Net/utils/metrics.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/utils/metrics.py; L8–22, L27–40"
+          ]
+        },
+        "test_input": {
+          "value": "The high-frequency branch uses full resolution; short- and long-range low-frequency branches each use 1/4 resolution. Additional whole-image resizing, sliding windows and TTA are unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p7 / proceedings p13281 Table4",
+            "F2A; https://arxiv.org/pdf/2506.07847v1; PDF p5 §4.2"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "The table does not explicitly name validation or test. A 142-image test split is inferred from the comparison protocol.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1; p6 Tables1–2"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "The repository contains data preparation, model branches and a generic metrics module, but no complete training/testing entry point. The metric defaults are ignore_index=255 and exclude=(); with num_classes=7, a direct call averages seven classes. The invocation used for the paper is unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "F2Net/utils/metrics.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/utils/metrics.py; L9, L19, L24, L34–39",
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1"
+          ]
+        },
+        "baseline_source": {
+          "value": "Final-version Table 1 reports DeepLabv3+ cropping 64.10/downsampling 70.10; arXiv v1 reports 63.1/69.69. Neither version explicitly identifies these accuracy rows as rerun or cited. Citation [4] identifies the original method rather than an explicit numerical source.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1; p6 Tables1–2",
+            "F2A; https://arxiv.org/pdf/2506.07847v1; PDF p7 Tables1–2"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The final version states that all FPS measurements use one Tesla V100. F2Net reports 24.30 FPS on DeepGlobe and 5.50 FPS on Inria; Table 7 reports 15.4 FPS for the frequency-domain ablation at the same 80.22 accuracy. Timing batch, precision, warm-up, synchronization and preprocessing/postprocessing are not reported. The training batch is 8.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1; p6 Tables1–2; p8 Table7"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "VMamba-Tiny-M2 [2,2,4,2], base 64; a custom ResNet18 DeepLabv3 for the short-range branch; a 6-layer ViT-tiny for the long-range branch. All backbones use ImageNet-1K initialization. SGD with momentum 0.9, lr 1e-3, polynomial power 0.9 and batch 8; DeepGlobe 80k/Inria 40k updates.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1"
+          ]
+        },
+        "reported_score": {
+          "value": 80.22,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p6 Table1"
+          ]
+        }
+      }
+    },
+    {
+      "method": "F2Net",
+      "dataset": "Inria",
+      "repository_url": "https://github.com/easm002/F2Net",
+      "repository_commit": "6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb",
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The final version updates the DeepGlobe values to 70.10/64.10; rerun versus citation is not explicitly reported.",
+      "fields": {
+        "split": {
+          "value": "The paper reports 126/27/27. The repository supplies no lists; its default seed=0 generates a random city-interleaved split and accepts external --lists. Equivalence to the FCtL/ISDNet lists is unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 / proceedings p13279 §4.1",
+            "F2Net/datasets/prepare_inria.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/datasets/prepare_inria.py; L33–72, L80–89"
+          ]
+        },
+        "class_set": {
+          "value": "Two label classes: background and building.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1",
+            "F2Net/datasets/prepare_inria.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/datasets/prepare_inria.py; L15–17, L99–100"
+          ]
+        },
+        "inria_metric": {
+          "value": "The paper labels 83.39 as mIoU without defining building IoU versus a two-class mean. Generic ConfusionMatrix.results averages all classes by default, but no paper evaluation entry point connects to this function. The reported metric is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p6 / proceedings p13280 Table2",
+            "F2Net/utils/metrics.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/utils/metrics.py; L24–40"
+          ]
+        },
+        "aggregation": {
+          "value": "The released metrics module accumulates a pooled confusion matrix. Training/testing entry points are absent, leaving its use in the published results unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "F2Net/utils/metrics.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/utils/metrics.py; L8–22, L27–40"
+          ]
+        },
+        "test_input": {
+          "value": "The high-frequency branch uses full resolution; short- and long-range low-frequency branches each use 1/4 resolution. Additional whole-image resizing, sliding windows and TTA are unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p7 / proceedings p13281 Table4",
+            "F2A; https://arxiv.org/pdf/2506.07847v1; PDF p5 §4.2"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "The table does not explicitly name validation or test. A 27-image test split is inferred from the comparison protocol.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1; p6 Tables1–2"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "The generic metrics module defaults to a two-class mean. The invocation and metric definition for the paper's 83.39 result are unresolved.",
+          "evidence_level": "Code-confirmed",
+          "sources": [
+            "F2Net/utils/metrics.py; https://github.com/easm002/F2Net/blob/6b8c88b9d84e0fd88c19ab34f01ab474046d5cdb/utils/metrics.py; L9, L19, L24, L34–39",
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1"
+          ]
+        },
+        "baseline_source": {
+          "value": "The Inria Table 2 value 55.90 matches GLNet, FCtL, WSDNet, GPWFormer and BPT. The direct numerical source and whether the row was rerun are not explicitly reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1; p6 Tables1–2",
+            "F2A; https://arxiv.org/pdf/2506.07847v1; PDF p7 Tables1–2"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The final version states that all FPS measurements use one Tesla V100. F2Net reports 24.30 FPS on DeepGlobe and 5.50 FPS on Inria; Table 7 reports 15.4 FPS for the frequency-domain ablation at the same 80.22 accuracy. Timing batch, precision, warm-up, synchronization and preprocessing/postprocessing are not reported. The training batch is 8.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1; p6 Tables1–2; p8 Table7"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "VMamba-Tiny-M2 [2,2,4,2], base 64; a custom ResNet18 DeepLabv3 for the short-range branch; a 6-layer ViT-tiny for the long-range branch. All backbones use ImageNet-1K initialization. SGD with momentum 0.9, lr 1e-3, polynomial power 0.9 and batch 8; DeepGlobe 80k/Inria 40k updates.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p5 §4.1"
+          ]
+        },
+        "reported_score": {
+          "value": 83.39,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "F2P; https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_F2Net_A_Frequency-Fused_Network_for_Ultra-High_Resolution_Remote_Sensing_Segmentation_CVPR_2026_paper.pdf; PDF p6 Table2"
+          ]
+        }
+      }
+    },
+    {
+      "method": "GPWFormer",
+      "dataset": "DeepGlobe",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "Matching scores leave rerun versus citation unresolved. The audited PDF is version v2.",
+      "fields": {
+        "split": {
+          "value": "Reported split 455/207/142 sums to 804, while the stated total is 803. Actual split lists were not available.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.1"
+          ]
+        },
+        "class_set": {
+          "value": "Seven label classes; the paper does not specify unknown handling in the final mean or confusion matrix.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.1"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p6 Table5"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "The transformer branch uses 500x500 patches; the paper specifies adjacent-patch overlap of 120x580. The CNN branch uses 500x500 inputs. TTA is not explicitly reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.2"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p6 Table5"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official implementation was not available in the inspected sources; code-to-paper comparison is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "DeepGlobe 63.5 and Inria 55.9 match WSDNet/GLNet. The paper does not explicitly identify their direct numerical source or whether they were rerun.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p6–7 §4.4/Table5–6"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The main comparison reports memory using gpustat, batch 1 and disabled gradients. Training uses a V100 and batch 8. Method FPS, milliseconds and timing protocol are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.2"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "CNN branch: DeepLabv3+ ResNet18. WFormer has three layers; its transformer uses ImageNet-1K initialization. Adam with lr 5e-5, polynomial power 0.9 and batch 8; Inria 40k/DeepGlobe 80k updates.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p3 Figure1/§3.1; p5 §4.2"
+          ]
+        },
+        "reported_score": {
+          "value": 75.8,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p6 Table5"
+          ]
+        }
+      }
+    },
+    {
+      "method": "GPWFormer",
+      "dataset": "Inria",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "Matching scores leave rerun versus citation unresolved. The audited PDF is version v2.",
+      "fields": {
+        "split": {
+          "value": "126/27/27; actual split lists were not available.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.1"
+          ]
+        },
+        "class_set": {
+          "value": "Two label classes: building and non-building.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.1"
+          ]
+        },
+        "inria_metric": {
+          "value": "Reported as mIoU; building-only versus two-class averaging is not explicitly defined. Metric equivalence to ISDNet/FCtL is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p7 Table6"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "The transformer branch uses 500x500 patches; the paper specifies adjacent-patch overlap of 120x580. The CNN branch uses 500x500 inputs. TTA is not explicitly reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.2"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p7 Table6"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official implementation was not available in the inspected sources; code-to-paper comparison is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "DeepGlobe 63.5 and Inria 55.9 match WSDNet/GLNet. The paper does not explicitly identify their direct numerical source or whether they were rerun.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p6–7 §4.4/Table5–6"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The main comparison reports memory using gpustat, batch 1 and disabled gradients. Training uses a V100 and batch 8. Method FPS, milliseconds and timing protocol are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p5 §4.2"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "CNN branch: DeepLabv3+ ResNet18. WFormer has three layers; its transformer uses ImageNet-1K initialization. Adam with lr 5e-5, polynomial power 0.9 and batch 8; Inria 40k/DeepGlobe 80k updates.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p3 Figure1/§3.1; p5 §4.2"
+          ]
+        },
+        "reported_score": {
+          "value": 76.5,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "GPP; https://arxiv.org/pdf/2307.00711v1; PDF p7 Table6"
+          ]
+        }
+      }
+    },
+    {
+      "method": "BPT",
+      "dataset": "DeepGlobe",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Cited",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The text explicitly states that baseline results are referenced from Ji, Zhao and Lu 2023 (GPWFormer).",
+      "fields": {
+        "split": {
+          "value": "Reported split 455/207/142 sums to 804, while the stated total is 803. Actual split lists were not available.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4–5 Experimental Setup"
+          ]
+        },
+        "class_set": {
+          "value": "Seven label classes; the paper does not specify unknown handling in the final mean or confusion matrix.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4–5 Experimental Setup"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4 Table1"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "32x32 token patches and four PMT/PRB layers; additional whole-image resizing and TTA are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p2–3 Patch Feature Extraction; p5 Implementation"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4 Table1"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official implementation was not available in the inspected sources; code-to-paper comparison is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "Baseline results are explicitly attributed to Ji, Zhao and Lu 2023 (GPWFormer), rather than directly to URUR. The corresponding values are DeepGlobe 63.5/Inria 55.9.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4 Table1; p5 Table2 and Baselines"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The main comparison reports memory using gpustat and batch 1. The training device is written as GTX3090 in the paper. FPS, milliseconds and timing protocol are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p5 Evaluation Metrics/Implementation"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "PVT base blocks; ImageNet-1K pretraining for 300 epochs with AdamW, lr 1e-3 and cosine scheduling. Segmentation uses AdamW, lr 1e-4, polynomial power 0.9 and Inria 40k/DeepGlobe 80k updates.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p2–3; p5 Implementation"
+          ]
+        },
+        "reported_score": {
+          "value": 76.6,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4 Table1"
+          ]
+        }
+      }
+    },
+    {
+      "method": "BPT",
+      "dataset": "Inria",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Cited",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The text explicitly states that baseline results are referenced from Ji, Zhao and Lu 2023 (GPWFormer).",
+      "fields": {
+        "split": {
+          "value": "126/27/27; actual split lists were not available.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4–5 Experimental Setup"
+          ]
+        },
+        "class_set": {
+          "value": "Two label classes: building and non-building.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4–5 Experimental Setup"
+          ]
+        },
+        "inria_metric": {
+          "value": "Reported as mIoU; building-only versus two-class averaging is not explicitly defined. Metric equivalence to ISDNet/FCtL is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p5 Table2"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "32x32 token patches and four PMT/PRB layers; additional whole-image resizing and TTA are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p2–3 Patch Feature Extraction; p5 Implementation"
+          ]
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p5 Table2"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official implementation was not available in the inspected sources; code-to-paper comparison is unresolved.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "Baseline results are explicitly attributed to Ji, Zhao and Lu 2023 (GPWFormer), rather than directly to URUR. The corresponding values are DeepGlobe 63.5/Inria 55.9.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p4 Table1; p5 Table2 and Baselines"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The main comparison reports memory using gpustat and batch 1. The training device is written as GTX3090 in the paper. FPS, milliseconds and timing protocol are not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p5 Evaluation Metrics/Implementation"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "PVT base blocks; ImageNet-1K pretraining for 300 epochs with AdamW, lr 1e-3 and cosine scheduling. Segmentation uses AdamW, lr 1e-4, polynomial power 0.9 and Inria 40k/DeepGlobe 80k updates.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p2–3; p5 Implementation"
+          ]
+        },
+        "reported_score": {
+          "value": 77.1,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "BPP; https://arxiv.org/pdf/2412.10181; PDF p5 Table2"
+          ]
+        }
+      }
+    },
+    {
+      "method": "U-SSNet",
+      "dataset": "DeepGlobe",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The paper follows FCtL's grouping, without a row-level reuse statement. The audited PDF is version v2.",
+      "fields": {
+        "split": {
+          "value": "455/207/142 with a stated total of 803; split lists are absent.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p13–14 §6.1"
+          ]
+        },
+        "class_set": {
+          "value": "Seven label classes; exact unknown handling is not reported.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p13–14 §6.1"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Table11"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official U-SSNet implementation was not available in the inspected sources; the paper provides no code link.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "DeepGlobe global 63.5/local 63.1, Inria 55.9 and URUR 33.1. The text follows FCtL's grouping and cites the source of GLNet*, but does not explicitly identify the direct numerical source or rerun status of each DeepLabv3+ row.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11 and §6.4"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The paper states RTX2080Ti and batch 1 for memory/FPS measurement. Its main UHR tables report memory without FPS values. Other timing details are unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p14 §6.2; p15 Tables10–11"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "Section 6.2 states that U-SSNet follows WSDNet's training settings. The initialization path is unresolved. The same paragraph separately describes random-scaling and other settings for STLNet++; their use for U-SSNet is not specified.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p14 §6.2"
+          ]
+        },
+        "reported_score": {
+          "value": 76.9,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11"
+          ]
+        }
+      }
+    },
+    {
+      "method": "U-SSNet",
+      "dataset": "Inria",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The paper follows FCtL's grouping, without a row-level reuse statement. The audited PDF is version v2.",
+      "fields": {
+        "split": {
+          "value": "126/27/27; split lists are absent.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p13–14 §6.1"
+          ]
+        },
+        "class_set": {
+          "value": "Two label classes: building and non-building.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p13–14 §6.1"
+          ]
+        },
+        "inria_metric": {
+          "value": "The value 77.5 is labeled mIoU; building IoU versus a two-class mean is not explicitly defined.",
+          "evidence_level": "Unresolved",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Table11"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official U-SSNet implementation was not available in the inspected sources; the paper provides no code link.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "DeepGlobe global 63.5/local 63.1, Inria 55.9 and URUR 33.1. The text follows FCtL's grouping and cites the source of GLNet*, but does not explicitly identify the direct numerical source or rerun status of each DeepLabv3+ row.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11 and §6.4"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The paper states RTX2080Ti and batch 1 for memory/FPS measurement. Its main UHR tables report memory without FPS values. Other timing details are unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p14 §6.2; p15 Tables10–11"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "Section 6.2 states that U-SSNet follows WSDNet's training settings. The initialization path is unresolved. The same paragraph separately describes random-scaling and other settings for STLNet++; their use for U-SSNet is not specified.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p14 §6.2"
+          ]
+        },
+        "reported_score": {
+          "value": 77.5,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11"
+          ]
+        }
+      }
+    },
+    {
+      "method": "U-SSNet",
+      "dataset": "URUR",
+      "repository_url": null,
+      "repository_commit": null,
+      "baseline_origin_label": "Provenance unresolved",
+      "baseline_origin_label_scope": "Provenance of the paper's DeepLabv3+ row; other comparison rows and the proposed method are assessed separately.",
+      "baseline_origin_comment": "The paper follows FCtL's grouping, without a row-level reuse statement. The audited PDF is version v2.",
+      "fields": {
+        "split": {
+          "value": "Total 3008; this paragraph does not give separate train/validation/test counts.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p13–14 §6.1"
+          ]
+        },
+        "class_set": {
+          "value": "Eight label classes; inclusion of all classes in the final mean is not explicitly stated.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p13–14 §6.1"
+          ]
+        },
+        "inria_metric": {
+          "value": "Not applicable",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Table11"
+          ]
+        },
+        "aggregation": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "test_input": {
+          "value": "Not explicitly reported; an executable invocation corresponding to the paper's evaluation was not available.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "eval_split_reported": {
+          "value": "test",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11"
+          ]
+        },
+        "code_default_vs_paper": {
+          "value": "An official U-SSNet implementation was not available in the inspected sources; the paper provides no code link.",
+          "evidence_level": "Unresolved",
+          "sources": []
+        },
+        "baseline_source": {
+          "value": "DeepGlobe global 63.5/local 63.1, Inria 55.9 and URUR 33.1. The text follows FCtL's grouping and cites the source of GLNet*, but does not explicitly identify the direct numerical source or rerun status of each DeepLabv3+ row.",
+          "evidence_level": "Inferred",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11 and §6.4"
+          ]
+        },
+        "latency_protocol": {
+          "value": "The paper states RTX2080Ti and batch 1 for memory/FPS measurement. Its main UHR tables report memory without FPS values. Other timing details are unresolved.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p14 §6.2; p15 Tables10–11"
+          ]
+        },
+        "backbone_pretraining": {
+          "value": "Section 6.2 states that U-SSNet follows WSDNet's training settings. The initialization path is unresolved. The same paragraph separately describes random-scaling and other settings for STLNet++; their use for U-SSNet is not specified.",
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p14 §6.2"
+          ]
+        },
+        "reported_score": {
+          "value": 48.0,
+          "evidence_level": "Explicitly reported in the paper",
+          "sources": [
+            "USP; https://arxiv.org/pdf/2503.08043v1; PDF p15 Tables10–11"
+          ]
+        }
+      }
+    }
+  ],
+  "evidence_policy": "Paper claims, code observations, reproduced measurements, and unresolved evidence are distinguished."
+}

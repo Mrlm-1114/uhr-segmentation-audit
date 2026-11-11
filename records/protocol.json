@@ -1,0 +1,19 @@
+{
+  "fixed_input": 508,
+  "fair_scale": 0.8,
+  "seed_labels": [
+    0,
+    1,
+    2
+  ],
+  "scales": {
+    "pHalf": "1/2",
+    "pThird": "1/3",
+    "pSixth": "1/6",
+    "pThreeQuarters": "3/4"
+  },
+  "isdnet_reproduction_references": {
+    "deepglobe": 73.3,
+    "inria": 74.39
+  }
+}

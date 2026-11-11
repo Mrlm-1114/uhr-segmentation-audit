@@ -1,0 +1,11 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "cpu_models": [
+    "Intel(R) Xeon(R) Platinum 8358P CPU @ 2.60GHz"
+  ],
+  "threads": {
+    "torch": 4,
+    "interop": 1,
+    "opencv": 1
+  }
+}

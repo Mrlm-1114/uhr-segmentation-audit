@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+external/
+data/
+weights/
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
