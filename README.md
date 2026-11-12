@@ -108,8 +108,6 @@ python -m scripts.evaluate --config ../configs/isdnet_dg.json --checkpoint ../we
 python -m scripts.specialized --factory adapters.fctl.endpoint:FCtLEndpoint --code external/FCtL --weights ../weights/fctl --receipt adapters/fctl/source_receipt.json --dataset inria --variant FCtL --manifest ../manifests/inria_timing.json --time --output ../runs/fctl_calls.csv
 python -m scripts.specialized --factory adapters.magnet_agpl.endpoint:MagNetEndpoint --code external/MagNet --weights ../weights/magnet --receipt adapters/magnet_agpl/source_receipt.json --dataset deepglobe --variant MagNet-Fast --manifest ../manifests/dg_timing.json --time --output ../runs/magnet_fast_calls.csv
 python scripts/reproduce_tables.py > comparison.csv
-python -m pip install -r environment/figures.txt
-python figures/figure3.py --output ../generated_figures
 ```
 
 The timing manifests select 20 DeepGlobe or 10 Inria test images using NumPy
@@ -149,15 +147,11 @@ from separate partition blocks, rather than dividing by complete-path times.
 | Table V: efficiency | `records/main_timing/calls.csv`, `specialized_calls.csv`, `partitions.json`, specialized memory |
 | Table VI: seeds | `records/quality/seed_metrics.json`, primary seed-0 route timings |
 | Table VII: URUR | `records/urur/confusion_matrices.json`, `calls.csv`, published references |
-| Figure 1 | `figures/gen_teaser.py`, the same table inputs |
-| Figure 2 | `figures/figure2/`; external user-supplied thumbnails only |
-| Figure 3 | `figures/figure3.py`, primary and URUR route records |
-| Figure 4 | `figures/fig_qual_col.tex`; external user-supplied crops only |
+| Figure 3: coordinates | primary and URUR route records, checked by `scripts/reproduce_tables.py` |
 
-Figures 2 and 4 require privately supplied assets. No dataset pixels, labels,
-thumbnails, model weights, or URUR identifier lists are distributed. Instructions
-for figures are in `figures/README.md`. Unmeasured routes and unavailable
-measurements remain explicit in the records.
+Figure drawing sources are not included. No dataset pixels, labels, model
+weights, or URUR identifier lists are distributed. Unmeasured routes and
+unavailable measurements remain explicit in the records.
 
 ## License and citation
 
