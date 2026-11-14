@@ -1,0 +1,168 @@
+{
+  "S5": [
+    {
+      "budget_ms": "31.286",
+      "GlobalResize": {
+        "miou_percent": "75.92",
+        "p50_ms": "29.850"
+      },
+      "SparseRefine": null,
+      "RCLC": null
+    },
+    {
+      "budget_ms": "34.266",
+      "GlobalResize": {
+        "miou_percent": "76.61",
+        "p50_ms": "32.110"
+      },
+      "SparseRefine": null,
+      "RCLC": null
+    },
+    {
+      "budget_ms": "37.245",
+      "GlobalResize": {
+        "miou_percent": "77.14",
+        "p50_ms": "34.466"
+      },
+      "SparseRefine": null,
+      "RCLC": {
+        "miou_percent": "76.58",
+        "p50_ms": "36.521"
+      }
+    },
+    {
+      "budget_ms": "44.694",
+      "GlobalResize": {
+        "miou_percent": "78.11",
+        "p50_ms": "43.851"
+      },
+      "SparseRefine": null,
+      "RCLC": {
+        "miou_percent": "76.77",
+        "p50_ms": "39.552"
+      }
+    },
+    {
+      "budget_ms": "59.592",
+      "GlobalResize": {
+        "miou_percent": "79.32",
+        "p50_ms": "56.462"
+      },
+      "SparseRefine": {
+        "miou_percent": "78.78",
+        "p50_ms": "55.979"
+      },
+      "RCLC": {
+        "miou_percent": "76.77",
+        "p50_ms": "39.552"
+      }
+    },
+    {
+      "budget_ms": "74.491",
+      "GlobalResize": {
+        "miou_percent": "79.32",
+        "p50_ms": "56.462"
+      },
+      "SparseRefine": {
+        "miou_percent": "78.69",
+        "p50_ms": "59.599"
+      },
+      "RCLC": {
+        "miou_percent": "76.77",
+        "p50_ms": "39.552"
+      }
+    },
+    {
+      "budget_ms": "89.389",
+      "GlobalResize": {
+        "miou_percent": "79.63",
+        "p50_ms": "75.496"
+      },
+      "SparseRefine": {
+        "miou_percent": "78.69",
+        "p50_ms": "59.599"
+      },
+      "RCLC": {
+        "miou_percent": "76.77",
+        "p50_ms": "39.552"
+      }
+    },
+    {
+      "budget_ms": "104.287",
+      "GlobalResize": {
+        "miou_percent": "79.69",
+        "p50_ms": "94.345"
+      },
+      "SparseRefine": {
+        "miou_percent": "78.69",
+        "p50_ms": "59.599"
+      },
+      "RCLC": {
+        "miou_percent": "76.77",
+        "p50_ms": "39.552"
+      }
+    }
+  ],
+  "S6": [
+    {
+      "head_seed": 812,
+      "precision": "FP32",
+      "local_miou_percent": "77.314",
+      "matched_linear_global_miou_percent": "78.516",
+      "fitted_expected_mean_latency_ms": "45.322",
+      "maximum_margin_pp": "-1.202",
+      "ci95_low_pp": "-1.774",
+      "ci95_high_pp": "-0.713"
+    },
+    {
+      "head_seed": 2027,
+      "precision": "FP32",
+      "local_miou_percent": "77.296",
+      "matched_linear_global_miou_percent": "78.532",
+      "fitted_expected_mean_latency_ms": "45.497",
+      "maximum_margin_pp": "-1.235",
+      "ci95_low_pp": "-1.827",
+      "ci95_high_pp": "-0.744"
+    },
+    {
+      "head_seed": 3407,
+      "precision": "FP32",
+      "local_miou_percent": "77.220",
+      "matched_linear_global_miou_percent": "78.521",
+      "fitted_expected_mean_latency_ms": "45.374",
+      "maximum_margin_pp": "-1.301",
+      "ci95_low_pp": "-1.911",
+      "ci95_high_pp": "-0.817"
+    },
+    {
+      "head_seed": 812,
+      "precision": "FP16",
+      "local_miou_percent": "76.337",
+      "matched_linear_global_miou_percent": "77.191",
+      "fitted_expected_mean_latency_ms": "11.158",
+      "maximum_margin_pp": "-0.854",
+      "ci95_low_pp": "-1.297",
+      "ci95_high_pp": "-0.391"
+    },
+    {
+      "head_seed": 2027,
+      "precision": "FP16",
+      "local_miou_percent": "76.330",
+      "matched_linear_global_miou_percent": "77.239",
+      "fitted_expected_mean_latency_ms": "11.233",
+      "maximum_margin_pp": "-0.909",
+      "ci95_low_pp": "-1.348",
+      "ci95_high_pp": "-0.473"
+    },
+    {
+      "head_seed": 3407,
+      "precision": "FP16",
+      "local_miou_percent": "76.284",
+      "matched_linear_global_miou_percent": "77.261",
+      "fitted_expected_mean_latency_ms": "11.268",
+      "maximum_margin_pp": "-0.977",
+      "ci95_low_pp": "-1.427",
+      "ci95_high_pp": "-0.552"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "release_date": "2026-11-14",
+  "supporting_tables": [
+    "S5",
+    "S6"
+  ],
+  "source_artifacts": [
+    {
+      "source_artifact": "E5_FAIR_ALL_ENDPOINTS.csv",
+      "source_sha256": "2a9044833d837fdf6f5f8527522c541ca5193254076edba791abf370c0ad9cb4",
+      "release_file": "shared_base_endpoints.csv",
+      "transformation": "UTF-8/LF encoding; all fields and numeric strings preserved."
+    },
+    {
+      "source_artifact": "E5_FAIR_FROZEN_BUDGET_CHOICES.csv",
+      "source_sha256": "79eb140a662958c308a03cf59cac22e96806596642616b7785142d2792e3b63e",
+      "release_file": "shared_base_budget_choices.csv",
+      "transformation": "UTF-8/LF encoding; all fields, selected routes and unavailable entries preserved."
+    },
+    {
+      "source_artifact": "E5_FAIR_CLEAN.json",
+      "source_sha256": "04713b1561f7974e067464c4364ddd00b0bfa1fe4ed4ccd711f1b61d48a1427f",
+      "release_file": "shared_base_session_quantiles.csv",
+      "transformation": "Export the 87 preserved session quantiles and historical pooled-score recomputation summaries; no new per-call timing."
+    },
+    {
+      "source_artifact": "E5_ORACLE_ALL_FAMILIES.csv",
+      "source_sha256": "189c6bc51438ad8e4ae7652ad9e67983f07a03700d0c798fd70ad459e849b3fd",
+      "release_file": "oracle_family_summaries.csv",
+      "transformation": "All 54 numeric/family records preserved; absolute source paths replaced by seed/precision record IDs."
+    },
+    {
+      "source_artifact": "E5_FAIR_CLEAN.json",
+      "source_sha256": "04713b1561f7974e067464c4364ddd00b0bfa1fe4ed4ccd711f1b61d48a1427f",
+      "release_file": "shared_base_protocol.json",
+      "transformation": "Export documented methods/environment; omit private checkpoint paths and retain GPU UUID prefix only."
+    },
+    {
+      "source_artifact": "E5_ORACLE_CLEAN.json",
+      "source_sha256": "28841e8a1977d315ce3e9ae00b60fc459d975a8d1f4f8df18dd44d2ec82484ab",
+      "release_file": "oracle_protocol.json",
+      "transformation": "Export documented protocol/environment and bootstrap scope; retain GPU UUID prefixes only."
+    },
+    {
+      "source_artifact": "manuscript_supplement_numeric_definitions",
+      "source_sha256": "914e916442830000227c8503e342435b60f5098b7f0b7d3229077fb5212b7ddb",
+      "release_file": "expected_tables.json",
+      "transformation": "Independent displayed-value snapshot for Tables S5 and S6; used only for comparisons."
+    }
+  ],
+  "interpretation": "These are the preserved numerical summaries used for the manuscript. They are not new training, inference or bootstrap results.",
+  "excluded": [
+    "Dataset images and labels",
+    "Model weights",
+    "Private filesystem paths",
+    "Per-image arrays and original per-call timing arrays, which were not located for this release"
+  ],
+  "privacy_transformations": [
+    "Removed absolute paths from the oracle CSV.",
+    "Removed private checkpoint paths from model metadata.",
+    "Retained device UUID prefixes, not complete UUIDs."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "table": "S6",
+  "protocol_id": "cityscapes_p0_measured_global_20260929",
+  "quality_images": 300,
+  "classes": 19,
+  "head_seeds": [
+    812,
+    2027,
+    3407
+  ],
+  "precision_scenarios": [
+    "fp32_predictions_and_fp32_timing",
+    "fp16_predictions_and_fp16_timing"
+  ],
+  "primary_family": "oracle_abs_iou",
+  "bootstrap_draws_recorded": 10000,
+  "bootstrap_rule": "paired image resampling, recompute quality and mean workload latency, rebuild global linear frontier, reselect maximum within each frozen family; P2 coefficients held fixed",
+  "environment": {
+    "fp32": {
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+        "numpy": "1.26.4",
+        "torch": "2.12.1+cu130",
+        "cuda": "13.0",
+        "cudnn": 92000,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "cudnn_benchmark": false,
+        "torch_num_threads": 4,
+        "torch_num_interop_threads": 104,
+        "opencv": "4.10.0",
+        "opencv_num_threads": 25,
+        "device": "NVIDIA GeForce RTX 5090",
+        "device_index": 0,
+        "precision": "fp32",
+        "autocast": false,
+        "device_uuid_prefix": "1e8063da",
+        "driver": "595.71.05"
+      },
+      "timing_protocol": {
+        "images": 50,
+        "warmup_passes": 1,
+        "repeats": 5,
+        "order": "cyclic by image and repeat, unchanged TimingHarness",
+        "boundary": "decoded CPU uint8 BGR to GPU full-canvas argmax; includes CPU resize, H2D, normalize, inference, canvas interpolation, argmax",
+        "exclude": [
+          "disk read",
+          "PNG decode",
+          "model initialization"
+        ],
+        "tf32": false,
+        "cudnn_benchmark": false,
+        "torch_threads": 4,
+        "torch_interop_threads": 104,
+        "opencv_threads": 25
+      }
+    },
+    "fp16": {
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+        "numpy": "1.26.4",
+        "torch": "2.12.1+cu130",
+        "cuda": "13.0",
+        "cudnn": 92000,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "cudnn_benchmark": false,
+        "torch_num_threads": 4,
+        "torch_num_interop_threads": 104,
+        "opencv": "4.10.0",
+        "opencv_num_threads": 25,
+        "device": "NVIDIA GeForce RTX 5090",
+        "device_index": 0,
+        "precision": "fp16",
+        "autocast": true,
+        "device_uuid_prefix": "1e8063da",
+        "driver": "595.71.05"
+      },
+      "timing_protocol": {
+        "images": 50,
+        "warmup_passes": 1,
+        "repeats": 5,
+        "order": "cyclic by image and repeat, unchanged TimingHarness",
+        "boundary": "decoded CPU uint8 BGR to GPU full-canvas argmax; includes CPU resize, H2D, normalize, inference, canvas interpolation, argmax",
+        "exclude": [
+          "disk read",
+          "PNG decode",
+          "model initialization"
+        ],
+        "tf32": false,
+        "cudnn_benchmark": false,
+        "torch_threads": 4,
+        "torch_interop_threads": 104,
+        "opencv_threads": 25
+      }
+    }
+  },
+  "data_level": "Preserved full-precision family maxima and historical confidence bounds.",
+  "raw_per_image_arrays_in_this_release": false,
+  "bootstrap_rerun_for_this_release": false,
+  "table_display": {
+    "accuracy_percent": 3,
+    "latency_ms": 3,
+    "margin_pp": 3,
+    "confidence_bound_pp": 3
+  },
+  "scope": [
+    "The oracle uses labels and is a diagnostic, not a deployable policy.",
+    "Local workload latency is fitted expected mean latency; the global reference is linearly interpolated in measured mean latency.",
+    "The three correction heads share a backbone and data.",
+    "Intervals are copied from the historical paired-image bootstrap, with fixed latency-fit coefficients; repeat-timing uncertainty is excluded.",
+    "This protocol must not be pooled with the separate session-quantile experiment in Table S5."
+  ]
+}

@@ -9,6 +9,14 @@ selected-seed total confusion matrices and additional-seed validation/test trees
 `urur/` contains aggregate route metrics and total confusion matrices only;
 per-call `image` values are anonymous ordinal positions.
 
+`cityscapes/` contains preserved endpoint, budget-selection, session-quantile and
+oracle-family summaries for supplementary Tables S5 and S6, along with the two
+rendered CSV tables. Run `scripts/reproduce_cityscapes_tables.py` for their separate
+reconstruction and consistency checks. Original per-image/per-call arrays are not
+included for these experiments, and historical bootstrap intervals are retained
+without rerunning resampling. See [the Cityscapes record guide](cityscapes/README.md)
+for units, provenance and the distinction between its two timing protocols.
+
 Status fields distinguish complete, unavailable and unrequested observations.
 URUR R18 has no timing measurement; its full-resolution route was unavailable.
 Published URUR ISDNet accuracy is distinct from measured retrained accuracy.

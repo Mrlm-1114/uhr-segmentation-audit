@@ -1,0 +1,77 @@
+{
+  "table": "S5",
+  "protocol_id": "cityscapes_fair_external_v3_20260918",
+  "data": {
+    "name": "Cityscapes",
+    "quality_images": 300,
+    "classes": 19,
+    "canvas_hw": [
+      1024,
+      2048
+    ],
+    "quality_statistic": "pooled_mIoU_percent",
+    "timing_images": 50,
+    "timing_sessions": 3,
+    "timing_repeats_per_session": 3,
+    "timing_statistic": "median_across_3_session_p50; p95 aggregated separately"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.12.1+cu130",
+    "cuda": "13.0",
+    "cudnn": 92000,
+    "device_name": "NVIDIA GeForce RTX 5090",
+    "compute_capability": [
+      12,
+      0
+    ],
+    "num_threads": 1,
+    "precision": "FP32_no_TF32",
+    "cudnn_benchmark": true,
+    "boundary": "decoded_CPU_uint8_RGB_to_original_size_CUDA_class_map",
+    "batch_size": 1,
+    "device_uuid_prefix": "cfc397fc"
+  },
+  "selection_rule": "Weights fixed before opening calibration labels; neither method is adapted to evaluation.",
+  "models": {
+    "SparseRefine": {
+      "sha256": "1691c26ef71be5f3864929d2d80cb9eef4c55b6badcdc8cbb4f7b67603110cf3",
+      "epoch": 180,
+      "seed": 812,
+      "selection_role": "development",
+      "selection_threshold": 0.3,
+      "schedule_complete": true
+    },
+    "RCLC": {
+      "seed": 812,
+      "expected_historical_epoch": 34
+    }
+  },
+  "training": {
+    "epochs_completed": 500,
+    "validation_count": 50,
+    "best_epoch": 180,
+    "best_development_miou_percent": 84.91540173719176,
+    "last_development_miou_percent": 84.71810730240115
+  },
+  "table_families": [
+    "GlobalResize",
+    "SparseRefine",
+    "RCLC"
+  ],
+  "additional_recorded_family": "FixedBudget",
+  "table_display": {
+    "budget_ms": 3,
+    "miou_percent": 2,
+    "p50_ms": 3
+  },
+  "data_level": "Preserved full-precision endpoint and frozen-choice summaries, with per-session latency quantiles.",
+  "raw_per_image_arrays_in_this_release": false,
+  "scope": [
+    "One correction/SparseRefine seed (812); fixed shared base and evaluation split.",
+    "Model families have their own training schedules.",
+    "Budgets were used with calibration accuracy and development timing; this release preserves the frozen choices rather than reselecting on evaluation data.",
+    "All three saved timing sessions contribute to median-of-session-quantile summaries.",
+    "The historical shared base and data roles had prior-use history."
+  ]
+}

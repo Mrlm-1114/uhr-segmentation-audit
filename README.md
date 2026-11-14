@@ -31,6 +31,19 @@ the rendered values in Tables II–VII and the Figure 3 coordinates. It exits wi
 status 1 on any mismatch. `--format json` includes the full comparison and plot
 coordinates. The manuscript snapshot supplies the comparison values.
 
+Supplementary Cityscapes Tables S5 and S6 have a separate reconstruction:
+
+```sh
+python scripts/reproduce_cityscapes_tables.py --format json > cityscapes_checks.json
+```
+
+The [Cityscapes records](records/cityscapes/README.md) include full-precision
+archived summaries and viewable CSV tables. The script reconstructs the table
+rows, checks session-quantile aggregation and accuracy differences, and compares
+the displayed values with the manuscript. Per-image arrays and original per-call
+timings for these two experiments are not included; confidence bounds are retained
+from the historical bootstrap rather than recomputed by this script.
+
 ## Model environments
 
 The main timing environment was Python 3.10.20, PyTorch 2.0.0+cu118,
@@ -148,6 +161,8 @@ from separate partition blocks, rather than dividing by complete-path times.
 | Table VI: seeds | `records/quality/seed_metrics.json`, primary seed-0 route timings |
 | Table VII: URUR | `records/urur/confusion_matrices.json`, `calls.csv`, published references |
 | Figure 3: coordinates | primary and URUR route records, checked by `scripts/reproduce_tables.py` |
+| Supplementary Table S5: Cityscapes shared-base comparison | [frozen choices, endpoint and session summaries](records/cityscapes/README.md#table-s5-shared-base-comparison) |
+| Supplementary Table S6: Cityscapes oracle diagnostic | [archived family maxima and confidence intervals](records/cityscapes/README.md#table-s6-label-informed-diagnostic) |
 
 Figure drawing sources are not included. No dataset pixels, labels, model
 weights, or URUR identifier lists are distributed. Unmeasured routes and
